@@ -13,7 +13,11 @@ export default {
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
       { hid: 'description', name: 'description', content: '' },
     ],
-    link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }],
+    link: [
+      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
+      { rel: 'stylesheet', type: 'text/css', href: '/static/css/bootstrap.css'},
+      { rel: 'stylesheet', type: 'text/css', href: '/static/css/bootstrap-dark.css'}
+    ],
   },
 
   // Global CSS: https://go.nuxtjs.dev/config-css
@@ -33,10 +37,8 @@ export default {
 
   // Modules: https://go.nuxtjs.dev/config-modules
   modules: [
-    // https://go.nuxtjs.dev/bootstrap
-    'bootstrap-vue/nuxt',
     // https://go.nuxtjs.dev/content
-    '@nuxt/content',
+    // '@nuxt/content',
   ],
 
   // Content module configuration: https://go.nuxtjs.dev/config-content
