@@ -15,7 +15,7 @@ export default {
     ],
     script: [
       { src: 'https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js' },
-      { src: '/Moenupa.homepage/static/js/bootstrap.min.js' },
+      { src: '/Moenupa.homepage/static/js/bootstrap.bundle.min.js' },
       { src: '/Moenupa.homepage/static/js/moenupa.js' }
     ],
     link: [

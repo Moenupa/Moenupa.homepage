@@ -1,0 +1,1 @@
+window.__NUXT__=(function(a){return {staticAssetsBase:"\u002FMoenupa.homepage\u002Fdist\u002F_nuxt\u002Fstatic\u002F1616343115",layout:"default",error:a,serverRendered:true,routePath:"\u002Flinks",config:{app:{basePath:"\u002FMoenupa.homepage\u002Fdist\u002F",assetsPath:"\u002FMoenupa.homepage\u002Fdist\u002F_nuxt\u002F",cdnURL:a}}}}(null));
