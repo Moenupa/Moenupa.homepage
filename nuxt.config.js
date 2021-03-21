@@ -15,18 +15,17 @@ export default {
     ],
     script: [
       { src: 'https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js' },
-      { src: '/js/bootstrap.min.js' },
-      { src: '/js/moenupa.js' }
+      { src: '/Moenupa.homepage/static/js/bootstrap.min.js' },
+      { src: '/Moenupa.homepage/static/js/moenupa.js' }
     ],
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
-      { rel: 'stylesheet', type: 'text/css', href: '/css/bootstrap.css' },
-      { rel: 'stylesheet', type: 'text/css', href: '/css/materialdesignicons.min.css' },
+      { rel: 'stylesheet', type: 'text/css', id: 'bootstrap', href: '/Moenupa.homepage/static/css/bootstrap.css' },
+      { rel: 'stylesheet', type: 'text/css', href: '/Moenupa.homepage/static/css/materialdesignicons.min.css' },
     ],
   },
 
   generate: {
-    subFolders: false,
     fallback: '404.html'
   },
 
@@ -58,4 +57,8 @@ export default {
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {},
+
+  router: {
+    base: "/Moenupa.homepage/dist/",
+  }
 }
