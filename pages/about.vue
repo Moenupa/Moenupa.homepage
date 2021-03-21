@@ -1,19 +1,17 @@
 <template>
   <div class="container">
-    <header>
-      <div class="navbar fixed-top nav-bar-expand-lg scrolling-navbar navbar-dark">
-        <div>
-          <a href="/" class="brand"></a>
-        </div>
-      </div>
-    </header>
-    <main>
+    <div>
       <Logo />
-      <!-- <div>
-        <img src="./img/banner.png" alt="https://github.com/">
-      </div> -->
       <h1 class="title">Moenupa.homepage</h1>
       <div class="links">
+        <a
+          href="https://nuxtjs.org/"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="button--green"
+        >
+          Documentation
+        </a>
         <a
           href="https://github.com/nuxt/nuxt.js"
           target="_blank"
@@ -23,15 +21,7 @@
           GitHub
         </a>
       </div>
-    </main>
-    <footer>
-      <div>
-        <span>
-          Powered by
-        </span>
-        <a href="https://nuxtjs.org/" target="_blank" rel="noopener noreferrer" class="button bg-light">Nuxt.js</a>
-      </div>
-    </footer>
+    </div>
   </div>
 </template>
 

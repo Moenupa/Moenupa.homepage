@@ -13,11 +13,20 @@ export default {
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
       { hid: 'description', name: 'description', content: '' },
     ],
+    script: [
+      { src: 'https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js' },
+      { src: '/js/bootstrap.min.js' },
+      { src: '/js/moenupa.js' }
+    ],
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
-      { rel: 'stylesheet', type: 'text/css', href: '/static/css/bootstrap.css'},
-      { rel: 'stylesheet', type: 'text/css', href: '/static/css/bootstrap-dark.css'}
+      { rel: 'stylesheet', type: 'text/css', href: '/css/bootstrap.css' },
     ],
+  },
+
+  generate: {
+    subFolders: false,
+    fallback: '404.html'
   },
 
   // Global CSS: https://go.nuxtjs.dev/config-css
@@ -37,6 +46,8 @@ export default {
 
   // Modules: https://go.nuxtjs.dev/config-modules
   modules: [
+    // https://go.nuxtjs.dev/bootstrap
+    // 'bootstrap-vue/nuxt',
     // https://go.nuxtjs.dev/content
     // '@nuxt/content',
   ],
