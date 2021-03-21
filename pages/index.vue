@@ -1,37 +1,18 @@
 <template>
   <div class="container">
-    <header>
-      <div class="navbar fixed-top nav-bar-expand-lg scrolling-navbar navbar-dark">
-        <div>
-          <a href="/" class="brand"></a>
-        </div>
-      </div>
-    </header>
-    <main>
-      <Logo />
-      <!-- <div>
-        <img src="./img/banner.png" alt="https://github.com/">
-      </div> -->
-      <h1 class="title">Moenupa.homepage</h1>
-      <div class="links">
-        <a
-          href="https://github.com/nuxt/nuxt.js"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="button--grey"
-        >
-          GitHub
-        </a>
-      </div>
-    </main>
-    <footer>
-      <div>
-        <span>
-          Powered by
-        </span>
-        <a href="https://nuxtjs.org/" target="_blank" rel="noopener noreferrer" class="button bg-light">Nuxt.js</a>
-      </div>
-    </footer>
+    <Header />
+    <h1 class="title">Moenupa.homepage</h1>
+    <div class="links">
+      <a
+        href="https://github.com/nuxt/nuxt.js"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="button--grey"
+      >
+        GitHub
+      </a>
+    </div>
+    <Footer />
   </div>
 </template>
 
@@ -46,28 +27,6 @@ export default {}
   display: flex;
   justify-content: center;
   align-items: center;
-  text-align: center;
-}
-
-.title {
-  font-family: 'Quicksand', 'Source Sans Pro', -apple-system, BlinkMacSystemFont,
-    'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
-  display: block;
-  font-weight: 300;
-  font-size: 100px;
-  color: #35495e;
-  letter-spacing: 1px;
-}
-
-.subtitle {
-  font-weight: 300;
-  font-size: 42px;
-  color: #526488;
-  word-spacing: 5px;
-  padding-bottom: 15px;
-}
-
-.links {
-  padding-top: 15px;
+  flex-flow: column nowrap;
 }
 </style>

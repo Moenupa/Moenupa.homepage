@@ -21,6 +21,7 @@ export default {
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
       { rel: 'stylesheet', type: 'text/css', href: '/css/bootstrap.css' },
+      { rel: 'stylesheet', type: 'text/css', href: '/css/materialdesignicons.min.css' },
     ],
   },
 
