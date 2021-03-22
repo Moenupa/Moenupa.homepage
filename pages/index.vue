@@ -32,7 +32,12 @@
         <div class="courses bg-light">
           <h3>Courses</h3>
           <ul>
-            <li><i class="mdi mdi-code-greater-than"></i>COMP1001 Python</li>
+            <li><i class="mdi mdi-code-greater-than"></i>COMP1002 Computational Thinking</li>
+            <li><i class="mdi mdi-account-group"></i>COMP1901 Freshmen Seminar</li>
+            <li><i class="mdi mdi-currency-sign"></i>COMP1011 Programming Fundamentals</li>
+            <li><i class="mdi mdi-laptop"></i>COMP1411 Introduction to Computer Systems</li>
+            <li><i class="mdi mdi-data-matrix"></i>COMP1433 Introduction to Data Analysis</li>
+            <li><i class="mdi mdi-database"></i>COMP2411 Database Systems</li>
             <li><i class="mdi mdi-code-not-equal-variant"></i>COMP3421 Web App</li>
           </ul>
         </div>
@@ -53,7 +58,7 @@
 .banner {
   width: 100vw;
   padding-top: 100px;
-  background: linear-gradient(#ffffff00, #ffffffaa 40%, #ffffff),
+  background: linear-gradient(#00000000, var(--white) 60%),
     left / cover url(/Moenupa.homepage/static/img/87535316_p0.png) no-repeat fixed;
 }
 .profile img {
@@ -101,3 +106,11 @@ p:last-child {
   margin-bottom: 0;
 }
 </style>
+
+<script>
+export default {
+  script: [
+    { src: '/Moenupa.homepage/static/js/moenupa.js' }
+  ]
+}
+</script>

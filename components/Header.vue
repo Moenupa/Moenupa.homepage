@@ -32,8 +32,8 @@
             <span>Search</span>
           </a>
         </li>
-        <li class="nav-item" id="themeSwitch">
-          <a class="nav-link" href="javascript:">
+        <li class="nav-item">
+          <a class="nav-link" id="theme-switch" href="javascript:">
             <i class="mdi mdi-theme-light-dark"></i>
             <span>Light/Dark</span>
           </a>

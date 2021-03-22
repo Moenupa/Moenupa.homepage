@@ -1,5 +1,5 @@
 <template>
-  <div class="footer">
+  <div class="footer bg-light">
     <span>
       Powered by
     </span>

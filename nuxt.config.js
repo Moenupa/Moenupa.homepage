@@ -15,8 +15,7 @@ export default {
     ],
     script: [
       { src: 'https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js' },
-      { src: '/Moenupa.homepage/static/js/bootstrap.bundle.min.js' },
-      { src: '/Moenupa.homepage/static/js/moenupa.js' }
+      { src: '/Moenupa.homepage/static/js/bootstrap.bundle.min.js' }
     ],
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
@@ -56,7 +55,9 @@ export default {
   content: {},
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
-  build: {},
+  build: {
+    publicPath: '/static/',
+  },
 
   router: {
     base: "/Moenupa.homepage/dist/",
