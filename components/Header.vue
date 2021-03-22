@@ -63,4 +63,15 @@
 </style>
 
 <script>
+export default {
+    data: () => ({
+
+    }),
+    mounted() {
+      document.getElementById("theme-switch").addEventListener("click", function(){console.log("YESSSSSSSSSSSS");});
+    },
+    methods: {
+
+    }
+  }
 </script>

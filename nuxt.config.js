@@ -14,8 +14,9 @@ export default {
       { hid: 'description', name: 'description', content: '' },
     ],
     script: [
-      { src: 'https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js' },
-      { src: '/Moenupa.homepage/static/js/bootstrap.bundle.min.js' }
+      { type: "text/javascript", src: 'https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js' },
+      { type: "text/javascript", src: '/Moenupa.homepage/static/js/bootstrap.bundle.min.js' },
+      { type: "text/javascript", src: '/Moenupa.homepage/static/js/moenupa.js' },
     ],
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },

@@ -44,34 +44,36 @@
         <div class="bg-light text-center p-3 courses" >
           <h2>Courses</h2>
           <table class="table text-left m-0">
-            <tr>
-              <td><i class="mdi mdi-code-greater-than"></i></td>
-              <td>COMP1002 Computational Thinking</td>
-            </tr>
-            <tr>
-              <td><i class="mdi mdi-account-group"></i></td>
-              <td>COMP1901 Freshmen Seminar</td>
-            </tr>
-            <tr>
-              <td><i class="mdi mdi-currency-sign"></i></td>
-              <td>COMP1011 Programming Fundamentals</td>
-            </tr>
-            <tr>
-              <td><i class="mdi mdi-laptop"></i></td>
-              <td>COMP1411 Introduction to Computer Systems</td>
-            </tr>
-            <tr>
-              <td><i class="mdi mdi-data-matrix"></i></td>
-              <td>COMP1433 Introduction to Data Analysis</td>
-            </tr>
-            <tr>
-              <td><i class="mdi mdi-database"></i></td>
-              <td>COMP2411 Database Systems</td>
-            </tr>
-            <tr>
-              <td><i class="mdi mdi-code-not-equal-variant"></i></td>
-              <td>COMP3421 Web Application</td>
-            </tr>
+            <tbody>
+              <tr>
+                <td><i class="mdi mdi-code-greater-than"></i></td>
+                <td>COMP1002 Computational Thinking</td>
+              </tr>
+              <tr>
+                <td><i class="mdi mdi-account-group"></i></td>
+                <td>COMP1901 Freshmen Seminar</td>
+              </tr>
+              <tr>
+                <td><i class="mdi mdi-currency-sign"></i></td>
+                <td>COMP1011 Programming Fundamentals</td>
+              </tr>
+              <tr>
+                <td><i class="mdi mdi-laptop"></i></td>
+                <td>COMP1411 Introduction to Computer Systems</td>
+              </tr>
+              <tr>
+                <td><i class="mdi mdi-data-matrix"></i></td>
+                <td>COMP1433 Introduction to Data Analysis</td>
+              </tr>
+              <tr>
+                <td><i class="mdi mdi-database"></i></td>
+                <td>COMP2411 Database Systems</td>
+              </tr>
+              <tr>
+                <td><i class="mdi mdi-code-not-equal-variant"></i></td>
+                <td>COMP3421 Web Application</td>
+              </tr>
+            </tbody>
           </table>
         </div>
         <div class="bg-light text-center gist-box github">
@@ -104,7 +106,7 @@
   object-fit: cover;
 }
 .profile span + span {
-  margin-right: 1rem;
+  margin-left: 1rem;
 }
 .grid-container {
   display: grid !important;
@@ -157,18 +159,30 @@ p:last-child {
   border: none !important;
   background-color: transparent;
 }
-.gist .gist-data {
-  background-color: transparent;
+.gist .gist-data, .gist .gist-meta {
+  background-color: var(--light) !important;
 }
-.gist .gist-meta {
-  background-color: var(--gray);
+.gist .gist-data tr:first-child {
+  margin-top: .5rem;
+}
+.gist .gist-data tr:last-child {
+  margin-bottom: .5rem;
+}
+
+*::-webkit-scrollbar {
+  width: 1rem;               /* width of the entire scrollbar */
+}
+
+*::-webkit-scrollbar-track {
+  background: var(--light);        /* color of the tracking area */
+}
+
+*::-webkit-scrollbar-thumb {
+  background-color: #999;    /* color of the scroll thumb */
+  border-radius: .5rem;       /* roundness of the scroll thumb */
+  border: 3px solid var(--light);  /* creates padding around scroll thumb */
 }
 </style>
 
 <script>
-export default {
-  script: [
-    { src: '/Moenupa.homepage/static/js/moenupa.js' }
-  ]
-}
 </script>
