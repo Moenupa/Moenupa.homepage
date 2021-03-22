@@ -1,6 +1,6 @@
 <template>
   <div class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
-    <a href="/" class="brand">Moenupa</a>
+    <a href="/" class="brand">Moenupa.homepage</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
       <span class="mdi mdi-menu"></span>
       <span class="hamburger-upper"></span>
