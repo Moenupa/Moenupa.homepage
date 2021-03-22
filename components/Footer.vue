@@ -5,7 +5,13 @@
       <a href="https://nuxtjs.org/" target="_blank" rel="noopener noreferrer">Nuxt.js</a>
     </div>
     <div>
-      <span>Made with Love by Moenupa</span>
+      <span>Made with ❤ by Moenupa</span>
     </div>
   </div>
 </template>
+
+<style scoped>
+.footer {
+  margin-top: 50px;
+}
+</style>

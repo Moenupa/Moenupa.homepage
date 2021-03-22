@@ -74,16 +74,16 @@
             </tr>
           </table>
         </div>
-        <div class="bg-light text-center p-3 github">
-          <h2>Github</h2>
+        <div class="bg-light text-center p-3 gist-box github">
+          <h3>Github</h3>
           <script src="https://gist.github.com/Moenupa/aab911df7d12ffabb0ff9e8cb5545597.js"></script>
         </div>
-        <div class="bg-light text-center p-3 steam">
-          <h2>Steam</h2>
+        <div class="bg-light text-center p-3 gist-box steam">
+          <h3>Steam</h3>
           <script src="https://gist.github.com/Moenupa/dd5e2c295036bcfa7251a8dfe5facabc.js"></script>
         </div>
-        <div class="bg-light text-center p-3 netease-music">
-          <h2>Netease Music</h2>
+        <div class="bg-light text-center p-3 gist-box netease-music">
+          <h3>Netease Music</h3>
           <script src="https://gist.github.com/Moenupa/30493d0c7ead93d676b4d6c8a29dbb8a.js"></script>
         </div>
       </div>
@@ -94,8 +94,8 @@
 
 <style scoped>
 .banner {
-  width: 100vw;
-  padding-top: 100px;
+  width: inherit;
+  padding-top: 5rem;
   background: linear-gradient(#00000000, var(--white) 80%),
     left / cover url(/Moenupa.homepage/static/img/87535316_p0.png) no-repeat fixed;
 }
@@ -115,7 +115,9 @@
   grid-gap: 1rem;
   grid-template-areas: "profile profile profile"   
                        "introduction introduction courses"
-                       "interests interests courses"; 
+                       "interests interests courses"
+                       "github steam steam"
+                       "github netease-music netease-music"; 
 }
 .grid-container > * {
   display: block;
@@ -148,7 +150,15 @@ p:last-child {
 .profile { grid-area: profile }
 .interests { grid-area: interests }
 .courses { grid-area: courses }
-.introduction{ grid-area: introduction }
+.introduction { grid-area: introduction }
+.github { grid-area: github }
+.steam { grid-area: steam }
+.netease-music { grid-area: netease-music }
+
+.gist-box * {
+  margin: 0 !important;
+  border: none !important;
+}
 </style>
 
 <script>
