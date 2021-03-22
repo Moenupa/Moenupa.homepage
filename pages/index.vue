@@ -74,16 +74,13 @@
             </tr>
           </table>
         </div>
-        <div class="bg-light text-center p-3 gist-box github">
-          <h3>Github</h3>
+        <div class="bg-light text-center gist-box github">
           <script src="https://gist.github.com/Moenupa/aab911df7d12ffabb0ff9e8cb5545597.js"></script>
         </div>
-        <div class="bg-light text-center p-3 gist-box steam">
-          <h3>Steam</h3>
+        <div class="bg-light text-center gist-box steam">
           <script src="https://gist.github.com/Moenupa/dd5e2c295036bcfa7251a8dfe5facabc.js"></script>
         </div>
-        <div class="bg-light text-center p-3 gist-box netease-music">
-          <h3>Netease Music</h3>
+        <div class="bg-light text-center gist-box netease-music">
           <script src="https://gist.github.com/Moenupa/30493d0c7ead93d676b4d6c8a29dbb8a.js"></script>
         </div>
       </div>
@@ -92,7 +89,7 @@
   </div>
 </template>
 
-<style scoped>
+<style>
 .banner {
   width: inherit;
   padding-top: 5rem;
@@ -155,9 +152,16 @@ p:last-child {
 .steam { grid-area: steam }
 .netease-music { grid-area: netease-music }
 
-.gist-box * {
+.gist-box .gist * {
   margin: 0 !important;
   border: none !important;
+  background-color: transparent;
+}
+.gist .gist-data {
+  background-color: transparent;
+}
+.gist .gist-meta {
+  background-color: var(--gray);
 }
 </style>
 
