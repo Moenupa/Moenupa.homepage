@@ -12,7 +12,7 @@
 
 <style scoped>
 .footer {
-  margin-top: 50px;
-  margin-bottom: 10px;
+  padding-top: 50px;
+  padding-bottom: 10px;
 }
 </style>

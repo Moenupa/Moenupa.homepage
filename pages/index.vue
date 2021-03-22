@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="text-dark">
     <Header />
     <div class="banner">
       <div class="container grid-container">
@@ -76,13 +76,13 @@
             </tbody>
           </table>
         </div>
-        <div class="bg-light text-center gist-box github">
+        <div class="bg-light text-center py-3 gist-box github">
           <script src="https://gist.github.com/Moenupa/aab911df7d12ffabb0ff9e8cb5545597.js"></script>
         </div>
-        <div class="bg-light text-center gist-box steam">
+        <div class="bg-light text-center py-3 gist-box steam">
           <script src="https://gist.github.com/Moenupa/dd5e2c295036bcfa7251a8dfe5facabc.js"></script>
         </div>
-        <div class="bg-light text-center gist-box netease-music">
+        <div class="bg-light text-center py-3 gist-box netease-music">
           <script src="https://gist.github.com/Moenupa/30493d0c7ead93d676b4d6c8a29dbb8a.js"></script>
         </div>
       </div>
@@ -157,32 +157,21 @@ p:last-child {
 .gist-box .gist * {
   margin: 0 !important;
   border: none !important;
-  background-color: transparent;
-}
-.gist .gist-data, .gist .gist-meta {
-  background-color: var(--light) !important;
-}
-.gist .gist-data tr:first-child {
-  margin-top: .5rem;
-}
-.gist .gist-data tr:last-child {
-  margin-bottom: .5rem;
-}
-
-*::-webkit-scrollbar {
-  width: 1rem;               /* width of the entire scrollbar */
-}
-
-*::-webkit-scrollbar-track {
-  background: var(--light);        /* color of the tracking area */
-}
-
-*::-webkit-scrollbar-thumb {
-  background-color: #999;    /* color of the scroll thumb */
-  border-radius: .5rem;       /* roundness of the scroll thumb */
-  border: 3px solid var(--light);  /* creates padding around scroll thumb */
+  color: inherit !important;
+  background-color: transparent !important;
 }
 </style>
 
 <script>
+export default {
+  data: () => ({
+
+  }),
+  mounted() {
+    document.getElementById("theme-switch").addEventListener("click", function(){console.log("YESSSSSSSSSSSS");});
+  },
+  methods: {
+
+  }
+}
 </script>

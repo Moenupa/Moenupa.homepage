@@ -16,7 +16,8 @@ export default {
     script: [
       { type: "text/javascript", src: 'https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js' },
       { type: "text/javascript", src: '/Moenupa.homepage/static/js/bootstrap.bundle.min.js' },
-      { type: "text/javascript", src: '/Moenupa.homepage/static/js/moenupa.js' },
+      { type: "text/javascript", src: '/Moenupa.homepage/static/js/moenupa.js', body: true },
+
     ],
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
@@ -33,7 +34,8 @@ export default {
   css: [],
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
-  plugins: [],
+  plugins: [
+  ],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
   components: true,
