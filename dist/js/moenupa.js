@@ -11,3 +11,7 @@ $('#theme-switch').on("click", () => {
     $(".list-group-item-light, .list-group-item-dark").each((i, ele) => {$(ele).toggleClass('list-group-item-light list-group-item-dark');});
     if ($("html").attr("data-theme") == "dark") $("html").attr("data-theme", "light"); else $("html").attr("data-theme", "dark");
 }); if (window.matchMedia("(prefers-color-theme: dark)").matches) $("html").attr("data-theme", "dark"); else $("html").attr("data-theme", "light");
+
+$(function () {
+  $('[data-toggle="tooltip"]').tooltip()
+})

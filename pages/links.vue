@@ -1,31 +1,30 @@
 <template>
-  <div class="nuxt-container">
-    <div>
-      <Logo />
-      <h1 class="title">Moenupa.homepage</h1>
-      <div class="links">
-        <a
-          href="https://nuxtjs.org/"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="button--green"
-        >
-          Documentation
-        </a>
-        <a
-          href="https://github.com/nuxt/nuxt.js"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="button--grey"
-        >
-          GitHub
-        </a>
-      </div>
+  <div>
+    <NuxtLogo />
+    <h1 class="title">Moenupa.homepage</h1>
+    <h3 class="title">Powered by Nuxt.js</h3>
+    <div class="links">
+      <a
+        href="https://nuxtjs.org/"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="button--green"
+      >
+        Documentation
+      </a>
+      <a
+        href="https://github.com/nuxt/nuxt.js"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="button--grey"
+      >
+        GitHub
+      </a>
     </div>
   </div>
 </template>
 
-<style scoped>
+<style>
 *,
 *::before,
 *::after {
@@ -61,12 +60,6 @@
   color: #fff;
   background-color: #35495e;
 }
-.nuxt-container {
-  margin: 0 auto;
-  display: flex;
-  place-items: center;
-  text-align: center;
-}
 
 .title {
   font-family: 'Quicksand', 'Source Sans Pro', -apple-system, BlinkMacSystemFont,
@@ -90,3 +83,9 @@
   padding-top: 15px;
 }
 </style>
+
+<script>
+export default {
+  layout: 'simple'
+}
+</script>

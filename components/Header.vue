@@ -1,40 +1,34 @@
 <template>
-  <div class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
-    <a href="/" class="brand">Moenupa.homepage</a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+  <div class="navbar navbar-expand-lg navbar-light fixed-top">
+    <a href="#" class="brand mdi mdi-alpha-m-circle">Moenupa.homepage</a>
+    <button class="navbar-toggler btn-dark" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
       <span class="mdi mdi-menu"></span>
-      <span class="hamburger-upper"></span>
-      <span class="hamburger-lower"></span>
+      <!-- <span class="hamburger-upper"></span>
+      <span class="hamburger-lower"></span> -->
     </button>
     <div class="collapse navbar-collapse" id="navbarNav">
       <ul class="navbar-nav ml-auto text-center">
         <li class="nav-item">
-          <a class="nav-link" href="/">
-            <i class="mdi mdi-home"></i>
+          <NuxtLink class="nav-link" to="/">
+            <span class="mdi mdi-home"></span>
             <span>Home</span>
-          </a>
+          </NuxtLink>
         </li>
         <li class="nav-item">
           <NuxtLink class="nav-link" to="/about">
-            <i class="mdi mdi-information"></i>
+            <span class="mdi mdi-information"></span>
             <span>About</span>
           </NuxtLink>
         </li>
         <li class="nav-item">
           <NuxtLink class="nav-link" to="/links">
-            <i class="mdi mdi-link"></i>
+            <span class="mdi mdi-link"></span>
             <span>Link</span>
           </NuxtLink>
         </li>
-        <li class="nav-item" id="search-btn">
-          <a class="nav-link" data-toggle="modal" data-target="#modalSearch">
-            <i class="mdi mdi-magnify"></i>
-            <span>Search</span>
-          </a>
-        </li>
         <li class="nav-item">
           <a class="nav-link" id="theme-switch" href="javascript:">
-            <i class="mdi mdi-theme-light-dark"></i>
+            <span class="mdi mdi-theme-light-dark"></span>
             <span>Light/Dark</span>
           </a>
         </li>
@@ -44,7 +38,7 @@
   </div>
 </template>
 
-<style>
+<style scoped>
 /* .hamburger-upper, .hamburger-lower {
   display: block;
   height: 30px;
