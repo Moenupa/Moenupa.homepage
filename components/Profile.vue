@@ -59,7 +59,7 @@
   filter: brightness(80%);
 }
 .mdi-github {
-  color: var(--dark) !important;
+  color: rgba(var(--dark-rgb),.8) !important;
 }
 .mdi-wechat {
   color: #1AAD19 !important;

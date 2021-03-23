@@ -21,7 +21,7 @@ export default {
     ],
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/Moenupa.homepage/static/favicon.ico' },
-      { rel: 'stylesheet', type: 'text/css', id: 'bootstrap', href: '/Moenupa.homepage/static/css/bootstrap.css' },
+      { rel: 'stylesheet', type: 'text/css', id: 'bootstrap', href: '/Moenupa.homepage/static/css/bootstrap.min.css' },
       { rel: 'stylesheet', type: 'text/css', href: '/Moenupa.homepage/static/css/materialdesignicons.min.css' },
       { rel: 'stylesheet', type: 'text/css', href: '/Moenupa.homepage/static/css/moenupa.css' },
     ],

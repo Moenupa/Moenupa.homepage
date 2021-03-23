@@ -49,22 +49,49 @@
 </template>
 
 <style>
+.grid-container {
+  display: grid !important;
+  grid: auto-flow dense/ repeat(auto-fit, minmax(5rem, auto));
+  grid-gap: 1rem;
+}
+
+@media (max-width: 576px) {
+  .grid-container {
+    grid-template-areas: "profile"   
+                         "introduction"
+                         "courses"
+                         "interests"
+                         "github"
+                         "steam"
+                         "netease-music"; 
+  }
+}
+@media (min-width: 576px) {
+  .grid-container {
+    grid-template-areas: "profile profile"   
+                         "introduction introduction"
+                         "interests courses"
+                         "github courses"
+                         "steam steam"
+                         "netease-music netease-music"; 
+  }
+}
+@media (min-width: 1200px) {
+  .grid-container {
+    grid-template-areas: "profile profile profile"   
+                          "introduction introduction courses"
+                          "interests interests courses"
+                          "github . courses"
+                          "github steam steam"
+                          "github netease-music netease-music"; 
+  }
+}
+
 .banner {
   width: inherit;
   padding-top: 5rem;
   background: linear-gradient(#00000000, var(--white) 80%),
     left / cover url(/Moenupa.homepage/static/img/87535316_p0.png) no-repeat fixed;
-}
-.grid-container {
-  display: grid !important;
-  grid: auto-flow dense/ repeat(auto-fit, minmax(15rem, auto));
-  grid-gap: 1rem;
-  grid-template-areas: "profile profile profile"   
-                       "introduction introduction courses"
-                       "interests interests courses"
-                       "github . courses"
-                       "github steam steam"
-                       "github netease-music netease-music"; 
 }
 .grid-container > * {
   display: block;
@@ -77,9 +104,11 @@
 table tr:first-child, table tr:first-child > td {
   border-top: none;
 }
+table td {
+  border-top-color: 1px solid rgba(var(--dark-rgb), .5);
+}
 table, table tr, table th, table td {
   color: inherit !important;
-  border-color: rgba(var(--dark-rgb), .5);
 }
 p {
   text-align: initial;
@@ -99,11 +128,4 @@ p:last-child {
 </style>
 
 <script>
-export default {
-  head: {
-    link: [
-      { rel: 'stylesheet', type: 'text/css', href: '/Moenupa.homepage/static/css/gist-box.css' },
-    ],
-  }
-}
 </script>
