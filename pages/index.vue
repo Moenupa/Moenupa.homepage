@@ -24,15 +24,15 @@
         <h2>Courses</h2>
         <table class="table text-left m-0">
           <tbody>
-            <tr><td><span class="mdi mdi-code-greater-than"></span></td><td>COMP1002</td><td>Computational Thinking</td></tr>
-            <tr><td><span class="mdi mdi-account-group"></span></td><td>COMP1901</td><td>Freshmen Seminar</td></tr>
-            <tr><td><span class="mdi mdi-currency-sign"></span></td><td>COMP1011</td><td>Programming Fundamentals</td></tr>
-            <tr><td><span class="mdi mdi-laptop"></span></td><td>COMP1411</td><td>Introduction to Computer Systems</td></tr>
-            <tr><td><span class="mdi mdi-data-matrix"></span></td><td>COMP1433</td><td>Introduction to Data Analysis</td></tr>
-            <tr><td><span class="mdi mdi-iframe-array"></span></td><td>COMP2011</td><td>Data Structures</td></tr>
-            <tr><td><span class="mdi mdi-language-java"></span></td><td>COMP2021</td><td>Object-Oriented Programming</td></tr>
-            <tr><td><span class="mdi mdi-database"></span></td><td>COMP2411</td><td>Database Systems</td></tr>
-            <tr><td><span class="mdi mdi-code-not-equal-variant"></span></td><td>COMP3421</td><td>Web Application</td></tr>
+            <tr><td><span class="mdi mdi-code-greater-than"></span></td><td>COMP<br>1002</td><td>Computational Thinking</td></tr>
+            <tr><td><span class="mdi mdi-account-group"></span></td><td>COMP<br>1901</td><td>Freshmen Seminar</td></tr>
+            <tr><td><span class="mdi mdi-currency-sign"></span></td><td>COMP<br>1011</td><td>Programming Fundamentals</td></tr>
+            <tr><td><span class="mdi mdi-laptop"></span></td><td>COMP<br>1411</td><td>Introduction to Computer Systems</td></tr>
+            <tr><td><span class="mdi mdi-data-matrix"></span></td><td>COMP<br>1433</td><td>Introduction to Data Analysis</td></tr>
+            <tr><td><span class="mdi mdi-iframe-array"></span></td><td>COMP<br>2011</td><td>Data Structures</td></tr>
+            <tr><td><span class="mdi mdi-language-java"></span></td><td>COMP<br>2021</td><td>Object-Oriented Programming</td></tr>
+            <tr><td><span class="mdi mdi-database"></span></td><td>COMP<br>2411</td><td>Database Systems</td></tr>
+            <tr><td><span class="mdi mdi-code-not-equal-variant"></span></td><td>COMP<br>3421</td><td>Web Application</td></tr>
           </tbody>
         </table>
       </div>
@@ -118,7 +118,7 @@
   border-top: 1px solid rgba(var(--dark-rgb), .5) !important;
 }
 table tr:first-child, table tr:first-child > td {
-  border-top: none;
+  border-top: none !important;
 }
 
 table, table tr, table th, table td {
