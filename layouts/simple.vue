@@ -1,14 +1,18 @@
 <template>
   <div class="nuxt-container">
+    <Header />
     <Nuxt />
   </div>
 </template>
 
-<style>
-.nuxt-container {
+<style scoped>
+.nuxt-container
+{
   margin: 0 auto;
   display: flex;
-  place-items: center;
   text-align: center;
+  justify-content: center;
+  flex-direction: column;
+  min-height: 100vh;
 }
 </style>

@@ -2,13 +2,13 @@
   <div>
     <NuxtLogo />
     <h1 class="title">Moenupa.homepage</h1>
-    <h3 class="title">Powered by Nuxt.js</h3>
-    <div class="links">
+    <h3 class="subtitle">Powered by Nuxt.js</h3>
+    <div class="links" style="padding-top:15px">
       <a
         href="https://nuxtjs.org/"
         target="_blank"
         rel="noopener noreferrer"
-        class="button--green"
+        class="btn-nuxt"
       >
         Documentation
       </a>
@@ -16,7 +16,7 @@
         href="https://github.com/nuxt/nuxt.js"
         target="_blank"
         rel="noopener noreferrer"
-        class="button--grey"
+        class="btn-nuxt-github"
       >
         GitHub
       </a>
@@ -24,64 +24,65 @@
   </div>
 </template>
 
-<style>
-*,
-*::before,
-*::after {
+<style scoped>
+*, *::before, *::after {
   box-sizing: border-box;
   margin: 0;
 }
 
-.button--green {
+.btn-nuxt, .btn-nuxt-github {
   display: inline-block;
   border-radius: 4px;
-  border: 1px solid #3b8070;
-  color: #3b8070;
   text-decoration: none;
   padding: 10px 30px;
+  font-weight: 600;
 }
 
-.button--green:hover {
-  color: #fff;
-  background-color: #3b8070;
+.btn-nuxt {
+  border: 1px solid #108775;
+  color: #108775;
 }
 
-.button--grey {
-  display: inline-block;
-  border-radius: 4px;
-  border: 1px solid #35495e;
-  color: #35495e;
-  text-decoration: none;
-  padding: 10px 30px;
+.btn-nuxt:hover {
+  color: var(--light);
+  background-color: #108775;
+}
+
+.btn-nuxt-github {
+  border: 1px solid var(--gray);
+  color: var(--gray);
   margin-left: 15px;
 }
 
-.button--grey:hover {
-  color: #fff;
-  background-color: #35495e;
+.btn-nuxt-github:hover {
+  color: var(--light);
+  background-color: var(--gray);
+}
+
+.title, .subtitle {
+  font-weight: 300;
 }
 
 .title {
   font-family: 'Quicksand', 'Source Sans Pro', -apple-system, BlinkMacSystemFont,
     'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
   display: block;
-  font-weight: 300;
-  font-size: 100px;
-  color: #35495e;
+  font-size: 8rem;
+  color: #2F495E;
   letter-spacing: 1px;
 }
 
+[data-theme="dark"] .title {
+  color: #00C58E;
+}
+
 .subtitle {
-  font-weight: 300;
-  font-size: 42px;
-  color: #526488;
+  font-size: 3rem;
+  color: #108775;
   word-spacing: 5px;
   padding-bottom: 15px;
 }
 
-.links {
-  padding-top: 15px;
-}
 </style>
 
 <script>

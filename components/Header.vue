@@ -1,7 +1,7 @@
 <template>
   <div class="navbar navbar-expand-lg navbar-light fixed-top">
     <a href="#" class="brand mdi mdi-alpha-m-circle">Moenupa.homepage</a>
-    <button class="navbar-toggler btn-dark" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+    <button class="navbar-toggler btn btn-light" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
       <span class="mdi mdi-menu"></span>
       <!-- <span class="hamburger-upper"></span>
       <span class="hamburger-lower"></span> -->
@@ -53,7 +53,9 @@
   top: 80px;
   transition: .5s transform ease-in-out, .5s top ease-in-out .5s;
 } */
-
+.navbar {
+  background-color: rgba(var(--light-rgb),.5);
+}
 </style>
 
 <script>

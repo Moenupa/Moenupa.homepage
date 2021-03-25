@@ -16,14 +16,14 @@ export default {
     script: [
       { type: "text/javascript", src: 'https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js' },
       { type: "text/javascript", src: '/Moenupa.homepage/static/js/bootstrap.bundle.min.js' },
-      { type: "text/javascript", src: '/Moenupa.homepage/static/js/moenupa.js', body: true },
+      { type: "text/javascript", src: '/Moenupa.homepage/static/js/actions.js', body: true },
 
     ],
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/Moenupa.homepage/static/favicon.ico' },
       { rel: 'stylesheet', type: 'text/css', id: 'bootstrap', href: '/Moenupa.homepage/static/css/bootstrap.min.css' },
       { rel: 'stylesheet', type: 'text/css', href: '/Moenupa.homepage/static/css/materialdesignicons.min.css' },
-      { rel: 'stylesheet', type: 'text/css', href: '/Moenupa.homepage/static/css/moenupa.css' },
+      { rel: 'stylesheet', type: 'text/css', href: '/Moenupa.homepage/static/css/bootstrap-patcher.css' },
     ],
   },
 

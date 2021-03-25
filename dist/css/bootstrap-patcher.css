@@ -4,11 +4,11 @@
 }
 
 *::-webkit-scrollbar-track {
-  background: var(--light);
+  background: transparent;
 }
 
 *::-webkit-scrollbar-thumb {
-  background-color: var(--gray);
+  background-color: rgba(var(--dark-rgb),.5);
   border-radius: .4rem;
   border: .15rem solid var(--light);
 }
