@@ -34,7 +34,7 @@
         <a href="https://youtube.com/channel/UCbOOUmgSADEx9TK4gMQS85w" target="_blank"><span class="mdi mdi-youtube mdi-24px"></span></a>
       </span>
       <span data-toggle="tooltip" data-placement="bottom" title="Bilibili">
-        <a href="https://m.bilibili.com/space/380763134" target="_blank"><embed src="/Moenupa.homepage/static/img/bilibili.svg" type="image/svg+xml" class="mdi bilibili" style="margin: 1px 2px;" /></a>
+        <a href="https://m.bilibili.com/space/380763134" target="_blank"><embed src="/Moenupa.homepage/static/img/bilibili.svg" type="image/svg+xml" class="mdi bilibili"/></a>
       </span>
     </div>
   </div>

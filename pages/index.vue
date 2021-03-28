@@ -30,8 +30,11 @@
             <tr><td><span class="mdi mdi-laptop"></span></td><td>COMP<br>1411</td><td>Introduction to Computer Systems</td></tr>
             <tr><td><span class="mdi mdi-data-matrix"></span></td><td>COMP<br>1433</td><td>Introduction to Data Analysis</td></tr>
             <tr><td><span class="mdi mdi-iframe-array"></span></td><td>COMP<br>2011</td><td>Data Structures</td></tr>
-            <tr><td><span class="mdi mdi-language-java"></span></td><td>COMP<br>2021</td><td>Object-Oriented Programming</td></tr>
+            <tr><td><span class="mdi mdi-code-braces-box"></span></td><td>COMP<br>2021</td><td>Object-Oriented Programming</td></tr>
             <tr><td><span class="mdi mdi-database"></span></td><td>COMP<br>2411</td><td>Database Systems</td></tr>
+            <tr><td><span class="mdi mdi-network"></span></td><td>COMP<br>2322</td><td>Computer Networking</td></tr>
+            <tr><td><span class="mdi mdi-cpu-64-bit"></span></td><td>COMP<br>2421</td><td>Computer Organization</td></tr>
+            <tr><td><span class="mdi mdi-linux"></span></td><td>COMP<br>2432</td><td>Operating Systems</td></tr>
             <tr><td><span class="mdi mdi-code-not-equal-variant"></span></td><td>COMP<br>3421</td><td>Web Application</td></tr>
           </tbody>
         </table>
@@ -45,7 +48,14 @@
       <div class="bg-light text-center py-3 netease-music">
         <GistBox gistscript="https://gist.github.com/Moenupa/30493d0c7ead93d676b4d6c8a29dbb8a.js" />
       </div>
+      <div class="bg-light text-center py-3 codestats">
+        <GistBox gistscript="https://gist.github.com/Moenupa/5848c95b83cb449f79e14b16615039fc.js" />
+      </div>
+      <div class="bg-light text-center py-3 covid">
+        <GistBox gistscript="https://gist.github.com/Moenupa/58f69668a4db5aa5da0b74b901230ffc.js" />
+      </div>
     </div>
+    <!-- <FunctionBar /> -->
   </div>
 </template>
 
@@ -63,6 +73,8 @@
                          "courses"
                          "interests"
                          "github"
+                         "codestats"
+                         "covid"
                          "steam"
                          "netease-music"; 
   }
@@ -75,6 +87,8 @@
                          ". interests"
                          "github interests"
                          "courses courses"
+                         "codestats codestats"
+                         "covid covid"
                          "steam steam"
                          "netease-music netease-music"; 
   }
@@ -85,6 +99,8 @@
                          "introduction introduction"
                          "interests courses"
                          "github courses"
+                         "codestats codestats"
+                         "covid covid"
                          "steam steam"
                          "netease-music netease-music"; 
   }
@@ -95,6 +111,8 @@
     grid-template-areas: "profile profile profile"   
                           "introduction introduction courses"
                           "interests interests courses"
+                          "codestats codestats courses"
+                          "covid covid courses"
                           "github . courses"
                           "github steam steam"
                           "github netease-music netease-music"; 
@@ -105,7 +123,7 @@
   width: inherit;
   padding-top: 5rem;
   background: linear-gradient(#00000000, var(--white) 80%),
-    left / cover url(/Moenupa.homepage/static/img/87535316_p0.png) no-repeat fixed;
+    left top / cover url(/Moenupa.homepage/static/img/87535316_p0.png) no-repeat fixed;
 }
 .grid-container > * {
   display: block;
@@ -138,6 +156,8 @@ p:last-child {
 .github { grid-area: github }
 .steam { grid-area: steam }
 .netease-music { grid-area: netease-music }
+.codestats { grid-area: codestats; }
+.covid { grid-area: covid; }
 
 </style>
 
