@@ -55,7 +55,7 @@
         <GistBox gistscript="https://gist.github.com/Moenupa/58f69668a4db5aa5da0b74b901230ffc.js" />
       </div>
     </div>
-    <!-- <FunctionBar /> -->
+    <FunctionBar />
   </div>
 </template>
 

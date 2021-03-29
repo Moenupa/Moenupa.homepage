@@ -59,29 +59,14 @@
   color: inherit;
   filter: brightness(80%);
 }
-.mdi-github {
-  color: rgba(var(--dark-rgb),.8) !important;
-}
-.mdi-wechat {
-  color: #1AAD19 !important;
-}
-.mdi-music-circle {
-  color: #E32E2E !important;
-}
-.mdi-youtube {
-  color: #F70000 !important;
-}
-.mdi-twitter {
-  color: #1DA1F2 !important;
-}
-.mdi-facebook {
-  color: #4867AA !important;
-}
-.mdi-steam {
-  color: #2A475E !important;
-}
-[data-theme="dark"] .mdi-steam {
-  color: #1275A7 !important;
-}
+
+.mdi-github { color: rgba(var(--dark-rgb),.8) !important; }
+.mdi-wechat { color: #1AAD19 !important; }
+.mdi-music-circle { color: #E32E2E !important; }
+.mdi-youtube { color: #CD201F !important; }
+.mdi-twitter { color: #55ACEE !important; }
+.mdi-facebook { color: #3B5998 !important; }
+.mdi-steam { color: #2A475E !important; }
+[data-theme="dark"] .mdi-steam { color: #1275A7 !important; }
 
 </style>

@@ -26,12 +26,12 @@
             <span>Link</span>
           </NuxtLink>
         </li>
-        <li class="nav-item">
+        <!-- <li class="nav-item">
           <a class="nav-link" id="theme-switch" href="javascript:">
             <span class="mdi mdi-theme-light-dark"></span>
             <span>Light/Dark</span>
           </a>
-        </li>
+        </li> -->
       </ul>
     </div>
     
