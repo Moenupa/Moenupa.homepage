@@ -24,18 +24,18 @@
         <h2>Courses</h2>
         <table class="table text-left m-0">
           <tbody>
-            <tr><td><span class="mdi mdi-code-greater-than"></span></td><td>COMP<br>1002</td><td>Computational Thinking</td></tr>
-            <tr><td><span class="mdi mdi-account-group"></span></td><td>COMP<br>1901</td><td>Freshmen Seminar</td></tr>
-            <tr><td><span class="mdi mdi-currency-sign"></span></td><td>COMP<br>1011</td><td>Programming Fundamentals</td></tr>
-            <tr><td><span class="mdi mdi-laptop"></span></td><td>COMP<br>1411</td><td>Introduction to Computer Systems</td></tr>
-            <tr><td><span class="mdi mdi-data-matrix"></span></td><td>COMP<br>1433</td><td>Introduction to Data Analysis</td></tr>
-            <tr><td><span class="mdi mdi-iframe-array"></span></td><td>COMP<br>2011</td><td>Data Structures</td></tr>
-            <tr><td><span class="mdi mdi-code-braces-box"></span></td><td>COMP<br>2021</td><td>Object-Oriented Programming</td></tr>
-            <tr><td><span class="mdi mdi-database"></span></td><td>COMP<br>2411</td><td>Database Systems</td></tr>
-            <tr><td><span class="mdi mdi-network"></span></td><td>COMP<br>2322</td><td>Computer Networking</td></tr>
-            <tr><td><span class="mdi mdi-cpu-64-bit"></span></td><td>COMP<br>2421</td><td>Computer Organization</td></tr>
-            <tr><td><span class="mdi mdi-linux"></span></td><td>COMP<br>2432</td><td>Operating Systems</td></tr>
-            <tr><td><span class="mdi mdi-code-not-equal-variant"></span></td><td>COMP<br>3421</td><td>Web Application</td></tr>
+            <Course cicon="mdi-code-greater-than"           cdep="COMP" cid="1002" ctitle="Computational Thinking" />
+            <Course cicon="mdi-account-group"               cdep="COMP" cid="1901" ctitle="Freshmen Seminar" />
+            <Course cicon="mdi-currency-sign"               cdep="COMP" cid="1011" ctitle="Programming Fundamentals" />
+            <Course cicon="mdi-laptop"                      cdep="COMP" cid="1411" ctitle="Introduction to Computer Systems" />
+            <Course cicon="mdi-data-matrix"                 cdep="COMP" cid="1433" ctitle="Introduction to Data Analysis" />
+            <Course cicon="mdi-iframe-array"                cdep="COMP" cid="2011" ctitle="Data Structures" />
+            <Course cicon="mdi-code-braces-box"             cdep="COMP" cid="2021" ctitle="Object-Oriented Programming" />
+            <Course cicon="mdi mdi-database"                cdep="COMP" cid="2411" ctitle="Database Systems" />
+            <Course cicon="mdi mdi-network"                 cdep="COMP" cid="2322" ctitle="Computer Networking" />
+            <Course cicon="mdi mdi-cpu-64-bit"              cdep="COMP" cid="2421" ctitle="Computer Organization" />
+            <Course cicon="mdi mdi-linux"                   cdep="COMP" cid="2432" ctitle="Operating Systems" />
+            <Course cicon="mdi mdi-code-not-equal-variant"  cdep="COMP" cid="3421" ctitle="Web Application" />
           </tbody>
         </table>
       </div>
@@ -82,11 +82,10 @@
 @media (min-width: 576px) {
   .grid-container {
     grid-template-areas: "profile profile"   
-                         "introduction ."
                          "introduction interests"
-                         ". interests"
-                         "github interests"
+                         "introduction interests"
                          "courses courses"
+                         "github github"
                          "codestats codestats"
                          "covid covid"
                          "steam steam"
