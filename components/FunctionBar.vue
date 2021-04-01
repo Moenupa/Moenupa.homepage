@@ -4,8 +4,8 @@
       <button class="btn btn-light" id="theme-switch" data-toggle="tooltip" data-placement="right" title="Switch Light/Dark">
         <span class="mdi mdi-24px mdi-theme-light-dark"></span>
       </button>
-      <button class="btn btn-light" id="function2" data-toggle="tooltip" data-placement="right" title="Function1 (UnderDevelopment)">
-        <span class="mdi mdi-24px mdi-function"></span>
+      <button class="btn btn-light" id="return-top" data-toggle="tooltip" data-placement="right" title="Return to Top">
+        <span class="mdi mdi-24px mdi-arrow-up-drop-circle-outline"></span>
       </button>
       <button class="btn btn-light" id="function3" data-toggle="tooltip" data-placement="right" title="Function2 (UnderDevelopment)">
         <span class="mdi mdi-24px mdi-function"></span>

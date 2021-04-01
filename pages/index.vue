@@ -68,53 +68,55 @@
 
 @media (max-width: 576px) {
   .grid-container {
-    grid-template-areas: "profile"   
-                         "introduction"
-                         "courses"
-                         "interests"
-                         "github"
-                         "codestats"
-                         "covid"
-                         "steam"
-                         "netease-music"; 
+    grid-template-areas: 
+      "profile"   
+      "introduction"
+      "courses"
+      "interests"
+      "github"
+      "codestats"
+      "covid"
+      "steam"
+      "netease-music"; 
   }
 }
 @media (min-width: 576px) {
   .grid-container {
-    grid-template-areas: "profile profile"   
-                         "introduction interests"
-                         "introduction interests"
-                         "courses courses"
-                         "github github"
-                         "codestats codestats"
-                         "covid covid"
-                         "steam steam"
-                         "netease-music netease-music"; 
+    grid-template-areas: 
+      "profile profile"   
+      "introduction interests"
+      "introduction interests"
+      "courses courses"
+      "github github"
+      "codestats codestats"
+      "covid covid"
+      "steam steam"
+      "netease-music netease-music"; 
   }
 }
 @media (min-width: 768px) {
   .grid-container {
-    grid-template-areas: "profile profile"   
-                         "introduction introduction"
-                         "interests courses"
-                         "github courses"
-                         "codestats codestats"
-                         "covid covid"
-                         "steam steam"
-                         "netease-music netease-music"; 
+    grid-template-areas: 
+      "profile profile"   
+      "introduction introduction"
+      "interests courses"
+      "github courses"
+      "codestats codestats"
+      "covid covid"
+      "steam steam"
+      "netease-music netease-music"; 
   }
 }
 
 @media (min-width: 992px) {
   .grid-container {
-    grid-template-areas: "profile profile profile"   
-                          "introduction introduction courses"
-                          "interests interests courses"
-                          "codestats codestats courses"
-                          "covid covid courses"
-                          "github . courses"
-                          "github steam steam"
-                          "github netease-music netease-music"; 
+    grid-template-areas: 
+      "profile profile profile"   
+      "introduction introduction courses"
+      "interests interests courses"
+      "codestats covid courses"
+      "github steam steam"
+      "github netease-music netease-music"; 
   }
 }
 
