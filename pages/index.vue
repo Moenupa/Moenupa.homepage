@@ -77,7 +77,7 @@
       "codestats"
       "covid"
       "steam"
-      "netease-music"; 
+      "music"; 
   }
 }
 @media (min-width: 576px) {
@@ -91,7 +91,7 @@
       "codestats codestats"
       "covid covid"
       "steam steam"
-      "netease-music netease-music"; 
+      "music music"; 
   }
 }
 @media (min-width: 768px) {
@@ -101,22 +101,36 @@
       "introduction introduction"
       "interests courses"
       "github courses"
+      "covid courses"
       "codestats codestats"
-      "covid covid"
       "steam steam"
-      "netease-music netease-music"; 
+      "music music"; 
   }
 }
-
 @media (min-width: 992px) {
   .grid-container {
     grid-template-areas: 
       "profile profile profile"   
       "introduction introduction courses"
       "interests interests courses"
-      "codestats covid courses"
+      "codestats codestats courses"
+      "github covid courses"
       "github steam steam"
-      "github netease-music netease-music"; 
+      "music music ."; 
+  }
+}
+@media (min-width: 1200px) {
+  .grid-container {
+    grid-template-areas: 
+      "profile profile profile"   
+      "introduction introduction courses"
+      "interests interests courses"
+      "codestats covid courses"
+      "codestats . courses"
+      "codestats steam steam"
+      "github steam steam"
+      "github music music"
+      "github . ."; 
   }
 }
 
@@ -156,7 +170,7 @@ p:last-child {
 .introduction { grid-area: introduction }
 .github { grid-area: github }
 .steam { grid-area: steam }
-.netease-music { grid-area: netease-music }
+.netease-music { grid-area: music }
 .codestats { grid-area: codestats; }
 .covid { grid-area: covid; }
 
