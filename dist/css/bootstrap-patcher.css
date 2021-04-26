@@ -12,6 +12,15 @@
   border-radius: .4rem;
   border: .15rem solid var(--light);
 }
+
+body::-webkit-scrollbar {
+  display: none;
+}
+
+body {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
 :root {
   /*to change color theme, edit bootstrap scss */
   --blue: #007bff;

@@ -1,57 +1,43 @@
 <template>
   <div class="banner">
     <div class="container grid-container text-dark">
-      <div class="bg-light text-center p-3 profile">
+      <div class="bg-light text-center p-3" id="profile">
         <Profile />
       </div>
-      <div class="bg-light text-center p-3 interests">
+      <div class="bg-light text-center p-3" id="interests">
         <h2>Interests</h2>
         <table class="table text-left m-0">
           <tbody>
-            <tr><td><span class="mdi mdi-music-box"></span></td><td>Music</td></tr>
-            <tr><td><span class="mdi mdi-chart-box"></span></td><td>Machine Learning</td></tr>
-            <tr><td><span class="mdi mdi-gamepad-circle"></span></td><td>Gaming</td></tr>
-            <tr><td><span class="mdi mdi-web-box"></span></td><td>Front-End</td></tr>
+            <IconRow v-for="item in interestlist" :info="item" :key="item.id"/>
           </tbody>
         </table>
       </div>
-      <div class="bg-light text-center p-3 introduction" >
+      <div class="bg-light text-center p-3" id="introduction">
         <h2>Introduction</h2>
         <p>👋 Hello, there!</p>
         <p>I am WANG Meng, a year-2 Computing student from Hong Kong PolyU. I started the minor in mathematics in Oct, 2020. I am taking COMP3421 (Web Application Design and Development) this semester.</p>
       </div>
-      <div class="bg-light text-center p-3 courses" >
+      <div class="bg-light text-center p-3" id="courses">
         <h2>Courses</h2>
         <table class="table text-left m-0">
           <tbody>
-            <Course cicon="mdi-code-greater-than"           cdep="COMP" cid="1002" ctitle="Computational Thinking" />
-            <Course cicon="mdi-account-group"               cdep="COMP" cid="1901" ctitle="Freshmen Seminar" />
-            <Course cicon="mdi-currency-sign"               cdep="COMP" cid="1011" ctitle="Programming Fundamentals" />
-            <Course cicon="mdi-laptop"                      cdep="COMP" cid="1411" ctitle="Introduction to Computer Systems" />
-            <Course cicon="mdi-data-matrix"                 cdep="COMP" cid="1433" ctitle="Introduction to Data Analysis" />
-            <Course cicon="mdi-iframe-array"                cdep="COMP" cid="2011" ctitle="Data Structures" />
-            <Course cicon="mdi-code-braces-box"             cdep="COMP" cid="2021" ctitle="Object-Oriented Programming" />
-            <Course cicon="mdi mdi-database"                cdep="COMP" cid="2411" ctitle="Database Systems" />
-            <Course cicon="mdi mdi-network"                 cdep="COMP" cid="2322" ctitle="Computer Networking" />
-            <Course cicon="mdi mdi-cpu-64-bit"              cdep="COMP" cid="2421" ctitle="Computer Organization" />
-            <Course cicon="mdi mdi-linux"                   cdep="COMP" cid="2432" ctitle="Operating Systems" />
-            <Course cicon="mdi mdi-code-not-equal-variant"  cdep="COMP" cid="3421" ctitle="Web Application" />
+            <IconRow v-for="item in courselist" :info="item" :key="item.id"/>
           </tbody>
         </table>
       </div>
-      <div class="bg-light text-center py-3 github">
+      <div class="bg-light text-center py-3" id="github">
         <GistBox gistscript="https://gist.github.com/Moenupa/aab911df7d12ffabb0ff9e8cb5545597.js" />
       </div>
-      <div class="bg-light text-center py-3 steam">
+      <div class="bg-light text-center py-3" id="steam">
         <GistBox gistscript="https://gist.github.com/Moenupa/dd5e2c295036bcfa7251a8dfe5facabc.js" />
       </div>
-      <div class="bg-light text-center py-3 netease-music">
+      <div class="bg-light text-center py-3" id="netease-music">
         <GistBox gistscript="https://gist.github.com/Moenupa/30493d0c7ead93d676b4d6c8a29dbb8a.js" />
       </div>
-      <div class="bg-light text-center py-3 codestats">
+      <div class="bg-light text-center py-3" id="codestats">
         <GistBox gistscript="https://gist.github.com/Moenupa/5848c95b83cb449f79e14b16615039fc.js" />
       </div>
-      <div class="bg-light text-center py-3 covid">
+      <div class="bg-light text-center py-3" id="covid">
         <GistBox gistscript="https://gist.github.com/Moenupa/58f69668a4db5aa5da0b74b901230ffc.js" />
       </div>
     </div>
@@ -164,17 +150,46 @@ p:last-child {
   margin-bottom: 0;
 }
 
-.profile { grid-area: profile }
-.interests { grid-area: interests }
-.courses { grid-area: courses }
-.introduction { grid-area: introduction }
-.github { grid-area: github }
-.steam { grid-area: steam }
-.netease-music { grid-area: music }
-.codestats { grid-area: codestats; }
-.covid { grid-area: covid; }
+#profile { grid-area: profile }
+#interests { grid-area: interests }
+#courses { grid-area: courses }
+#introduction { grid-area: introduction }
+#github { grid-area: github }
+#steam { grid-area: steam }
+#netease-music { grid-area: music }
+#codestats { grid-area: codestats; }
+#covid { grid-area: covid; }
 
 </style>
 
 <script>
+export default {
+  data() {
+    return {
+      interestlist: [
+        { icon:"mdi-music-box"      , name:"Music",             tags:[] },
+        { icon:"mdi-chart-box"      , name:"Machine Learning",  tags:[] },
+        { icon:"mdi-gamepad-circle" , name:"Gaming",            tags:[] },
+        { icon:"mdi-web-box"        , name:"Front-End",         tags:["Vue"] },   
+      ],
+      courselist: [
+        { icon:"mdi-code-greater-than"      , name:"Computational Thinking",              tags:["COMP1002",], },
+        { icon:"mdi-account-group"          , name:"Freshmen Seminar",                    tags:["COMP1901",], },
+        { icon:"mdi-currency-sign"          , name:"Programming Fundamentals",            tags:["COMP1011",], },
+        { icon:"mdi-laptop"                 , name:"Introduction to Computer Systems",    tags:["COMP1411",], },
+        { icon:"mdi-data-matrix"            , name:"Introduction to Data Analysis",       tags:["COMP1433",], },
+        { icon:"mdi-iframe-array"           , name:"Data Structures",                     tags:["COMP2011",], },
+        { icon:"mdi-code-braces-box"        , name:"Object-Oriented Programming",         tags:["COMP2021",], },
+        { icon:"mdi-database"               , name:"Database Systems",                    tags:["COMP2411",], },
+        { icon:"mdi-network"                , name:"Computer Networking",                 tags:["COMP2322",], },
+        { icon:"mdi-cpu-64-bit"             , name:"Computer Organization",               tags:["COMP2421",], },
+        { icon:"mdi-linux"                  , name:"Operating Systems",                   tags:["COMP2432",], },
+        { icon:"mdi-code-not-equal-variant" , name:"Web Application",                     tags:["COMP3421",], },
+      ],
+    }
+  },
+  mounted: function () {
+    $('[data-toggle="tooltip"]').tooltip();
+  }
+}
 </script>
