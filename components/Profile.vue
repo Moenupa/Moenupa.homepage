@@ -1,7 +1,7 @@
 <template>
   <div class="profile-wrapper">
     <div class="selfie">
-      <img src="/img/87535316_p0.png" alt="">
+      <img src="/static/img/87535316_p0.png" alt="">
       <!-- author link: https://www.pixiv.net/users/23223750 not yet authorized-->
     </div>
     <h1>Moenupa WANG</h1>

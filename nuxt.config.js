@@ -31,7 +31,7 @@ export default {
       {
         rel: "icon",
         type: "image/x-icon",
-        href: "/favicon.ico"
+        href: "/static/favicon.ico"
       },
       {
         rel: "stylesheet",
@@ -47,11 +47,6 @@ export default {
         type: "text/css",
         href:
           "https://cdn.jsdelivr.net/npm/@mdi/font@5.9.55/css/materialdesignicons.min.css"
-      },
-      {
-        rel: "stylesheet",
-        type: "text/css",
-        href: "/css/bootstrap-patcher.css"
       }
     ]
   },

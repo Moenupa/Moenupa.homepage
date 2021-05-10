@@ -124,7 +124,7 @@
   width: inherit;
   padding-top: 5rem;
   background: linear-gradient(#00000000, var(--white) 80%),
-    left top / cover url("/img/87535316_p0.png") no-repeat fixed;
+    left top / cover url("/static/img/87535316_p0.png") no-repeat fixed;
 }
 .grid-container > * {
   display: block;
