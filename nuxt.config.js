@@ -31,7 +31,8 @@ export default {
       {
         rel: "icon",
         type: "image/x-icon",
-        href: "/static/favicon.ico"
+        href: "/static/onemore-flat.ico",
+        alt: "/static/favicon.ico"
       },
       {
         rel: "stylesheet",
