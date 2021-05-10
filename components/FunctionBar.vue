@@ -4,7 +4,7 @@
       <button class="btn btn-light" id="return-top" data-toggle="tooltip" data-placement="right" title="Return to Top" @click="scrollTop" v-show="visible">
         <span class="mdi mdi-arrow-up-drop-circle-outline"></span>
       </button>
-      <button class="btn btn-light" id="theme-switch" data-toggle="tooltip" data-placement="right" title="Switch Light/Dark" @click="switchTheme(true)">
+      <button class="btn btn-light" id="theme-switch" data-toggle="tooltip" data-placement="right" title="Switch Light/Dark" @click="switchTheme()">
         <span class="mdi mdi-weather-sunny"></span>
       </button>
       <button class="btn btn-light" id="function3" data-toggle="tooltip" data-placement="right" title="Function2 (UnderDevelopment)">
@@ -159,34 +159,27 @@ export default {
         $(ele).toggleClass("list-group-item-light list-group-item-dark");
       });
     },
-    switchTheme: function (b) {
-      if (b)
-      {
-        if ($("html").attr("data-theme") == "dark")
-          this.switchToLight();
-        else if ($("html").attr("data-theme") == "light") 
-          this.switchToDark();
-        else if (window.matchMedia("(prefers-color-theme: dark)").matches) 
-          this.switchToLight();
-        else
-          this.switchToDark();
-      }
+    switchTheme: function () {
+      if ($("html").attr("data-theme") == "dark")
+        this.switchToLight();
+      else if ($("html").attr("data-theme") == "light") 
+        this.switchToDark();
+      else if (window.matchMedia("(prefers-color-theme: dark)").matches) 
+        this.switchToLight();
       else
-      {
-        if ($("html").attr("data-theme") == "dark")
-          this.switchToDark();
-        else if ($("html").attr("data-theme") == "light") 
-          this.switchToLight();
-        else if (window.matchMedia("(prefers-color-theme: dark)").matches) 
-          this.switchToDark();
-        else
-          this.switchToLight();
-      }
+        this.switchToDark();
     }
   },
   mounted: function () {
     window.addEventListener('scroll', this.scrollListener);
-    this.switchTheme(false);
+    if ($("html").attr("data-theme") == "dark")
+      this.switchToDark();
+    else if ($("html").attr("data-theme") == "light") 
+      this.switchToLight();
+    else if (window.matchMedia("(prefers-color-theme: dark)").matches) 
+      this.switchToDark();
+    else
+      this.switchToLight();
   },
   beforeDestroy: function () {
     window.removeEventListener('scroll', this.scrollListener);
