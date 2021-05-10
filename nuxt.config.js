@@ -25,18 +25,14 @@ export default {
         integrity:
           "sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns",
         crossorigin: "anonymous"
-      },
-      {
-        type: "text/javascript",
-        src: "/Moenupa.homepage/static/js/actions.js",
-        body: true
       }
     ],
     link: [
       {
         rel: "icon",
         type: "image/x-icon",
-        href: "/Moenupa.homepage/static/favicon.ico"
+        href: "/static/onemore-flat.ico",
+        alt: "/static/favicon.ico"
       },
       {
         rel: "stylesheet",
@@ -52,11 +48,6 @@ export default {
         type: "text/css",
         href:
           "https://cdn.jsdelivr.net/npm/@mdi/font@5.9.55/css/materialdesignicons.min.css"
-      },
-      {
-        rel: "stylesheet",
-        type: "text/css",
-        href: "/Moenupa.homepage/static/css/bootstrap-patcher.css"
       }
     ]
   },
@@ -97,6 +88,6 @@ export default {
   },
 
   router: {
-    base: "/Moenupa.homepage/dist/"
+    base: "/Moenupa.homepage/"
   }
 };

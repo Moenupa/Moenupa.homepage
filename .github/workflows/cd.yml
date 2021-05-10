@@ -1,0 +1,40 @@
+name: cd
+
+on: [push, pull_request]
+
+jobs:
+  cd:
+    runs-on: ${{ matrix.os }}
+
+    strategy:
+      matrix:
+        os: [ubuntu-latest]
+        node: [14]
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@master
+
+      - name: Setup node env
+        uses: actions/setup-node@v2.1.2
+        with:
+          node-version: ${{ matrix.node }}
+
+      - name: Install dependencies
+        run: yarn
+
+      - name: Generate
+        run: yarn run generate
+
+      - name: Deploy
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GH_TOKEN }}
+          publish_dir: ./dist
+      
+      - name: Trigger Parent Repository Update 
+        run: |
+          curl -X POST https://api.github.com/repos/Moenupa/Moenupa.github.io/dispatches \
+          -H 'Accept: application/vnd.github.everest-preview+json' \
+          -u Moenupa:${{ secrets.GH_TOKEN }} \
+          --data '{"event_type": "ping", "client_payload": { "repository": "arst" }}'

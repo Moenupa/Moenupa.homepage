@@ -1,7 +1,7 @@
 <template>
   <div class="profile-wrapper">
     <div class="selfie">
-      <img src="/Moenupa.homepage/static/img/87535316_p0.png" alt="">
+      <img src="/static/img/87535316_p0.png" alt="">
       <!-- author link: https://www.pixiv.net/users/23223750 not yet authorized-->
     </div>
     <h1>Moenupa WANG</h1>
@@ -30,7 +30,7 @@
         iicon="mdi-youtube"
       />
       <!-- <span data-toggle="tooltip" data-placement="bottom" title="Bilibili">
-        <a href="https://m.bilibili.com/space/380763134" target="_blank"><embed src="/Moenupa.homepage/static/img/bilibili.svg" type="image/svg+xml" class="mdi bilibili" style="margin-bottom:-2px;" /></a>
+        <a href="https://m.bilibili.com/space/380763134" target="_blank"><embed src="/img/bilibili.svg" type="image/svg+xml" class="mdi bilibili" style="margin-bottom:-2px;" /></a>
       </span> -->
       <span data-toggle="tooltip" data-placement="bottom" title="Bilibili">
         <a href="https://m.bilibili.com/space/380763134" target="_blank"><span class="mdi bilibili" style="margin-bottom:-2px;" >
