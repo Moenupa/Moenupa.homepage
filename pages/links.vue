@@ -1,92 +1,87 @@
 <template>
-  <div>
-    <NuxtLogo />
-    <h1 class="title">Moenupa.links</h1>
-    <h3 class="subtitle">Powered by Nuxt.js</h3>
-    <div class="links" style="padding-top:15px">
-      <a
-        href="https://nuxtjs.org/"
-        target="_blank"
-        rel="noopener noreferrer"
-        class="btn-nuxt"
+  <v-container>
+    <v-row>
+      <v-spacer></v-spacer>
+      <v-col
+        cols="6"
+        sm="4"
+        md="3"
+        v-for="(item, index) in links"
+        :key="index"
       >
-        Documentation
-      </a>
-      <a
-        href="https://github.com/nuxt/nuxt.js"
-        target="_blank"
-        rel="noopener noreferrer"
-        class="btn-nuxt-github"
-      >
-        GitHub
-      </a>
-    </div>
-  </div>
+        <v-card
+          max-width="374"
+          min-width="200"
+        >
+          <v-img
+            height="250"
+            :src="item.img ? item.img: (source+'?'+item.name)"
+          ></v-img>
+
+          <v-card-title class="text-capitalize">{{ item.name }}</v-card-title>
+
+          <v-card-text>
+            <div>{{ item.description }}</div>
+          </v-card-text>
+
+          <v-divider class="mx-4"></v-divider>
+
+          <v-card-actions>
+            <NuxtLink :to="item.link" class="text-decoration-none">
+              <v-btn text color="deep-purple lighten-2">visit</v-btn>
+            </NuxtLink>
+            <v-btn text color="blue darken-1" v-for="extra in item.extras" :key="extra.id" :href="extra.link"><v-icon left v-if="extra.icon">{{ extra.icon }}</v-icon>{{extra.name}}</v-btn>
+          </v-card-actions>
+        </v-card>
+      </v-col>
+      <v-spacer></v-spacer>
+    </v-row>
+  </v-container>
 </template>
 
 <style scoped>
-*, *::before, *::after {
-  box-sizing: border-box;
-  margin: 0;
-}
-
-.btn-nuxt, .btn-nuxt-github {
-  display: inline-block;
-  border-radius: 4px;
-  text-decoration: none;
-  padding: 10px 30px;
-  font-weight: 600;
-}
-
-.btn-nuxt {
-  border: 1px solid #108775;
-  color: #108775;
-}
-
-.btn-nuxt:hover {
-  color: var(--light);
-  background-color: #108775;
-}
-
-.btn-nuxt-github {
-  border: 1px solid var(--gray);
-  color: var(--gray);
-  margin-left: 15px;
-}
-
-.btn-nuxt-github:hover {
-  color: var(--light);
-  background-color: var(--gray);
-}
-
-.title, .subtitle {
-  font-weight: 300;
-}
-
-.title {
-  font-family: 'Quicksand', 'Source Sans Pro', -apple-system, BlinkMacSystemFont,
-    'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
-  display: block;
-  font-size: 8rem;
-  color: #2F495E;
-  letter-spacing: 1px;
-}
-
-[data-theme="dark"] .title {
-  color: #00C58E;
-}
-
-.subtitle {
-  font-size: 3rem;
-  color: #108775;
-  word-spacing: 5px;
-  padding-bottom: 15px;
-}
-
 </style>
 
 <script>
 export default {
+  data() {
+    return {
+      source: "https://source.unsplash.com/random/",
+      links: [
+        {
+          name: "homepage",
+          description: "My personal homepage. Contains nearly everything you'll need to know about me.",
+          link: "/",
+          extras: [
+            {
+              icon: "mdi-github",
+              name: "Github",
+              link: "https://github.com/Moenupa/Moenupa.homepage/"
+            }
+          ]
+        },
+        {
+          name: "about",
+          description: "The page for information and acknowledgement.",
+          link: "/about",
+          extras: []
+        },
+        {
+          name: "blog",
+          disabled: true,
+          description: "A blog of my own study record.",
+          link: "https://Moenupa.github.io/Moenupa.blog/",
+          extras: [
+            {
+              icon: "mdi-github",
+              name: "Github",
+              link: "https://github.com/Moenupa/Moenupa.blog/"
+            }
+          ]
+        },
+      ]
+    }
+  },
   layout: 'simple'
 }
 </script>

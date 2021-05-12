@@ -1,86 +1,47 @@
 <template>
-  <div>
-    <NuxtLogo />
-    <h1 class="title">Moenupa.homepage</h1>
-    <h3 class="subtitle">Powered by Nuxt.js</h3>
-    <div class="links" style="padding-top:15px">
-      <a
-        href="https://nuxtjs.org/"
-        target="_blank"
-        rel="noopener noreferrer"
-        class="btn-nuxt"
-      >
-        Documentation
-      </a>
-      <a
-        href="https://github.com/nuxt/nuxt.js"
-        target="_blank"
-        rel="noopener noreferrer"
-        class="btn-nuxt-github"
-      >
-        GitHub
-      </a>
-    </div>
-  </div>
+  <v-container class="d-flex flex-column justify-center align-center ma-auto">
+    <v-row>
+      <NuxtLogo />
+    </v-row>
+    <v-row>
+      <v-col class="text-center">
+        <h1 class="nuxt-title font-weight-light" :style="`color:${$vuetify.theme.dark ? '#00C58E' : '#2F495E'}`">Moenupa.homepage</h1>
+        <h3 class="nuxt-subtitle font-weight-light">Powered by Nuxt.js</h3>
+      </v-col>
+    </v-row>
+    <v-row>
+      <v-col>  
+        <v-btn
+          href="https://nuxtjs.org/"
+          target="_blank"
+          outlined
+          :color="`success ${$vuetify.theme.dark ? 'lighten-1' : 'darken-1'}`"
+        >
+          Documentation
+        </v-btn>
+      </v-col>
+      <v-col>
+        <v-btn
+          href="https://github.com/nuxt/nuxt.js"
+          target="_blank"
+          outlined
+          :color="`grey ${$vuetify.theme.dark ? 'lighten-1' : 'darken-2'}`"
+        >
+          GitHub
+        </v-btn>
+      </v-col>
+    </v-row>
+  </v-container>
 </template>
 
 <style scoped>
-*, *::before, *::after {
-  box-sizing: border-box;
-  margin: 0;
+.nuxt-title {
+  font-size: 6rem;
 }
 
-.btn-nuxt, .btn-nuxt-github {
-  display: inline-block;
-  border-radius: 4px;
-  text-decoration: none;
-  padding: 10px 30px;
-  font-weight: 600;
-}
-
-.btn-nuxt {
-  border: 1px solid #108775;
+.nuxt-subtitle {
+  font-size: 2rem;
   color: #108775;
-}
-
-.btn-nuxt:hover {
-  color: var(--light);
-  background-color: #108775;
-}
-
-.btn-nuxt-github {
-  border: 1px solid var(--gray);
-  color: var(--gray);
-  margin-left: 15px;
-}
-
-.btn-nuxt-github:hover {
-  color: var(--light);
-  background-color: var(--gray);
-}
-
-.title, .subtitle {
-  font-weight: 300;
-}
-
-.title {
-  font-family: 'Quicksand', 'Source Sans Pro', -apple-system, BlinkMacSystemFont,
-    'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
-  display: block;
-  font-size: 8rem;
-  color: #2F495E;
-  letter-spacing: 1px;
-}
-
-[data-theme="dark"] .title {
-  color: #00C58E;
-}
-
-.subtitle {
-  font-size: 3rem;
-  color: #108775;
-  word-spacing: 5px;
-  padding-bottom: 15px;
 }
 
 </style>

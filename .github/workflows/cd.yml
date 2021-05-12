@@ -1,6 +1,12 @@
 name: cd
 
-on: [push, pull_request]
+on:
+  push:
+    branches:
+      - app
+  pull_request:
+    branches:
+      - app
 
 jobs:
   cd:
