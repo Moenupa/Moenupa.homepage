@@ -5,13 +5,13 @@
       <v-col
         cols="6"
         sm="4"
-        md="3"
+        lg="3"
         v-for="(item, index) in links"
         :key="index"
       >
         <v-card
           max-width="374"
-          min-width="200"
+          min-width="240"
         >
           <v-img
             height="250"
@@ -28,9 +28,9 @@
 
           <v-card-actions>
             <NuxtLink :to="item.link" class="text-decoration-none">
-              <v-btn text color="deep-purple lighten-2">visit</v-btn>
+              <v-btn text :color="`purple ${$vuetify.theme.dark ? 'lighten-2': 'darken-2'}`">visit</v-btn>
             </NuxtLink>
-            <v-btn text color="blue darken-1" v-for="extra in item.extras" :key="extra.id" :href="extra.link"><v-icon left v-if="extra.icon">{{ extra.icon }}</v-icon>{{extra.name}}</v-btn>
+            <v-btn text :color="`blue ${$vuetify.theme.dark ? 'darken-3': 'lighten-1'}`" v-for="extra in item.extras" :key="extra.id" :href="extra.link"><v-icon left v-if="extra.icon">{{ extra.icon }}</v-icon>{{extra.name}}</v-btn>
           </v-card-actions>
         </v-card>
       </v-col>
@@ -44,6 +44,14 @@
 
 <script>
 export default {
+  head: {
+    title: 'Navigation Page',
+    meta: [
+      { hid: 'keywords', name: 'keywords', content: 'Moenupa' },
+      { hid: 'keywords', name: 'keywords', content: 'Link Navigation Roadmap' },
+      { hid: 'description', name: 'description', content: 'Roadmap of Moenupa\'s Website' }
+    ]
+  },
   data() {
     return {
       source: "https://source.unsplash.com/random/",
@@ -55,8 +63,8 @@ export default {
           extras: [
             {
               icon: "mdi-github",
-              name: "Github",
-              link: "https://github.com/Moenupa/Moenupa.homepage/"
+              name: "github",
+              link: "https://github.com/Moenupa/Moenupa.homepage/blob/app/"
             }
           ]
         },
@@ -64,7 +72,13 @@ export default {
           name: "about",
           description: "The page for information and acknowledgement.",
           link: "/about",
-          extras: []
+          extras: [
+            {
+              icon: "mdi-github",
+              name: "github",
+              link: "https://github.com/Moenupa/Moenupa.homepage/blob/app/pages/about.vue"
+            }
+          ]
         },
         {
           name: "blog",
@@ -74,7 +88,7 @@ export default {
           extras: [
             {
               icon: "mdi-github",
-              name: "Github",
+              name: "github",
               link: "https://github.com/Moenupa/Moenupa.blog/"
             }
           ]

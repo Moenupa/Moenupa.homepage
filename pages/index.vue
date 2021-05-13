@@ -9,7 +9,7 @@
     </v-row>
     <v-row>
       <v-spacer></v-spacer>
-      <v-col cols="12" sm="10" md="6" xl="4">
+      <v-col cols="12" sm="10" md="6" xl="5">
         <v-card class="pa-4 mb-4" id="introduction">
           <h2 class="text-center">Introduction</h2>
           <p>👋 Hello, there!</p>
@@ -25,12 +25,17 @@
         </v-card>
       </v-col>
       <v-spacer></v-spacer>
-      <v-col cols="12" sm="12" md="6" xl="3">
-        <v-expansion-panels v-model="panel" multiple>
-          <v-expansion-panel v-for="(item, index) in gistlist" :key="index" :id="item.name">
-            <v-expansion-panel-header>{{ item.name }}</v-expansion-panel-header>
-            <v-expansion-panel-content class="gist-box">
-              <script :src="item.gist"></script>
+      <v-col cols="12" sm="12" md="6" xl="4">
+        <v-expansion-panels v-model="panel">
+          <v-expansion-panel v-for="(gist, index) in gistcontent" :key="index">
+            <v-expansion-panel-header>{{ gist.files[Object.keys(gist.files)[0]].filename }}</v-expansion-panel-header>
+            <v-expansion-panel-content>
+              <pre v-html="gist.files[Object.keys(gist.files)[0]].content" style="white-space: pre-wrap;">
+              </pre>
+              <v-divider class="mt-2"></v-divider>
+              <v-btn text :href="gist.html_url" color="purple"><v-icon left>mdi-github</v-icon>github</v-btn>
+              <v-btn text :href="gist.git_pull_url" color="green"><v-icon left>mdi-git</v-icon>git</v-btn>
+              <v-btn text disabled><v-icon left>mdi-update</v-icon>last update: {{ new Date(gist.updated_at).toString().slice(4,21) }}</v-btn>
             </v-expansion-panel-content>
           </v-expansion-panel>
         </v-expansion-panels>
@@ -47,7 +52,7 @@
         </v-card>
       </v-col>
       <v-spacer></v-spacer>
-      <v-col cols="12" sm="6" md="6" xl="2">
+      <v-col cols="12" sm="6" md="6" xl="3">
         <v-card class="pa-4" id="courses" justify="center" align="center">
           <h2>Courses</h2>
           <v-simple-table class="m-0">
@@ -63,25 +68,21 @@
 </template>
 
 <style>
-
-.gist-box * {
-  color: inherit !important;
-  margin: 0 !important;
-  border: none !important;
-  background-color: transparent !important;
-}
-.gist-meta {
-  color: var(--gray) !important;
-}
-
 p:last-child {
   margin-bottom: 0;
 }
-
 </style>
 
 <script>
 export default {
+  head: {
+    title: 'Moenupa\'s Homepage',
+    meta: [
+      { hid: 'keywords', name: 'keywords', content: 'Moenupa' },
+      { hid: 'keywords', name: 'keywords', content: 'Homepage' },
+      { hid: 'description', name: 'description', content: 'Moenupa\'s Personal Homepage' }
+    ]
+  },
   data() {
     return {
       panel: [1],
@@ -144,18 +145,26 @@ export default {
           },
           {
             icon:"mdi-vector-curve",
-            name:"Mathematics I",
+            name:"Mathematics Ⅰ",
             tags:["AMA2111",], 
           },
         ]
       },
       gistlist: [
-        { gist: "https://gist.github.com/Moenupa/58f69668a4db5aa5da0b74b901230ffc.js", name: "COVID-19 Statistics Box" },
-        { gist: "https://gist.github.com/Moenupa/5848c95b83cb449f79e14b16615039fc.js", name: "Code::Stats Statistics" },
-        { gist: "https://gist.github.com/Moenupa/30493d0c7ead93d676b4d6c8a29dbb8a.js", name: "Music Statistics" },
-        { gist: "https://gist.github.com/Moenupa/dd5e2c295036bcfa7251a8dfe5facabc.js", name: "Steam Statistics" },
-        { gist: "https://gist.github.com/Moenupa/aab911df7d12ffabb0ff9e8cb5545597.js", name: "Github Statistics" },
-      ]
+        "58f69668a4db5aa5da0b74b901230ffc",
+        "5848c95b83cb449f79e14b16615039fc",
+        "30493d0c7ead93d676b4d6c8a29dbb8a",
+        "dd5e2c295036bcfa7251a8dfe5facabc",
+        "aab911df7d12ffabb0ff9e8cb5545597",
+      ],
+      gistcontent: []
+    }
+  },
+  async fetch() {
+    for (var i = 0; i < this.gistlist.length; i++) {
+      this.gistcontent[i] = await fetch (
+        'https://api.github.com/gists/' + this.gistlist[i]
+      ).then(res => res.json())
     }
   },
   mounted() {
