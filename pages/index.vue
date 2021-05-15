@@ -1,37 +1,78 @@
 <template>
   <v-container class="main-wrapper">
     <v-row justify="space-around">
-      <v-col cols="12">
-        <v-card class="pa-4 mt-4" id="profile" justify="center" align="center">
-          <Profile />
+      <v-col cols="12" id="profile">
+        <v-card class="pa-4 mt-4" justify="center" align="center">
+          <v-avatar size="10rem">
+            <v-img id="selfie" src="/static/img/87535316_p0.png" alt="" />
+          </v-avatar>
+          <!-- author link: https://www.pixiv.net/users/23223750 not yet authorized-->
+
+          <div class="text-lg-h2 text-md-h3 text-h4">Moenupa WANG</div>
+          <div class="text-lg-h5 text-md-h6 text-body-1">
+            Current Undergraduate Student at Hong Kong PolyU
+          </div>
+
+          <div class="my-1" v-for="clist in contacts" :key="clist.id">
+            <v-tooltip bottom v-for="contact in clist" :key="contact.id">
+              <template v-slot:activator="{ on, attrs }">
+                <v-btn
+                  text
+                  small
+                  plain
+                  :href="contact.link ? contact.link : undefined"
+                  v-bind="attrs"
+                  v-on="on"
+                  :color="
+                    contact.darkaccent && $vuetify.theme.dark
+                      ? contact.darkaccent
+                      : contact.accent
+                  "
+                >
+                  <v-icon>{{ contact.icon }}</v-icon>
+                </v-btn>
+              </template>
+              <span>{{ contact.name }}</span>
+            </v-tooltip>
+          </div>
         </v-card>
       </v-col>
     </v-row>
     <v-row justify="space-around">
       <v-col cols="12" sm="10" md="6" xl="5">
         <v-card class="pa-4 mb-4" id="introduction">
-          <h2 class="text-center">Introduction</h2>
-          <p>👋 Hello, there!</p>
-          <p>
-            I am WANG Meng, a year-2 Computing student from Hong Kong PolyU. I
-            started the minor in mathematics in Oct, 2020. I am taking COMP3421
-            (Web Application Design and Development) this semester.
-          </p>
+          <div class="text-lg-h4 text-h5 text-center">Introduction</div>
+          <v-card-text>
+            <p class="text--primary">👋 Hello, there!</p>
+            <p class="text--primary">
+              I am WANG Meng, a year-2 Computing student from Hong Kong PolyU. I
+              started the minor in mathematics in Oct, 2020. I am taking
+              COMP3421 (Web Application Design and Development) this semester.
+            </p>
+          </v-card-text>
+          <v-divider></v-divider>
+          <v-card-text>
+            <div>
+              Contact me via any platform in the above information section.
+            </div>
+            <div>
+              Click
+              <v-btn x-small disabled outlined
+                ><v-icon small>mdi-function-variant</v-icon></v-btn
+              >
+              for functions in the bottom right corner to explore more.
+            </div>
+          </v-card-text>
         </v-card>
-        <v-card
-          class="pa-4 mb-4"
-          id="interests"
-          justify="center"
-          align="center"
-        >
-          <h2>Interests</h2>
+        <v-card class="pa-4 mb-4" id="interests">
+          <div class="text-lg-h4 text-h5 text-center">Interests</div>
           <v-simple-table class="table text-left m-0">
             <tbody>
               <IconRow
-                v-for="(item, index) in interestlist"
-                :info="item"
-                :key="index"
-                :len="interestlist.length"
+                v-for="(interest, ii) in interests"
+                :info="interest"
+                :key="ii"
+                :len="interests.length"
               />
             </tbody>
           </v-simple-table>
@@ -77,30 +118,21 @@
           </v-expansion-panel>
         </v-expansion-panels>
       </v-col>
-      <v-col cols="12" sm="6" md="6" xl="3">
+      <v-col
+        cols="12"
+        sm="6"
+        md="6"
+        xl="3"
+        v-for="(course, type, ci) in courses"
+        :key="ci"
+      >
         <v-card class="pa-4" justify="center" align="center">
-          <h2>Courses</h2>
+          <div class="text-lg-h4 text-h5 text-center text-capitalize">
+            {{ type }} Courses
+          </div>
           <v-simple-table class="m-0">
             <tbody>
-              <IconRow
-                v-for="item in courselist.comp"
-                :info="item"
-                :key="item.id"
-              />
-            </tbody>
-          </v-simple-table>
-        </v-card>
-      </v-col>
-      <v-col cols="12" sm="6" md="6" xl="3">
-        <v-card class="pa-4" justify="center" align="center">
-          <h2>Courses</h2>
-          <v-simple-table class="m-0">
-            <tbody>
-              <IconRow
-                v-for="item in courselist.other"
-                :info="item"
-                :key="item.id"
-              />
+              <IconRow v-for="item in course" :info="item" :key="item.id" />
             </tbody>
           </v-simple-table>
         </v-card>
@@ -132,6 +164,9 @@ pre {
   white-space: pre-wrap;
   overflow: auto !important;
 }
+#selfie {
+  object-fit: cover;
+}
 </style>
 
 <script>
@@ -153,114 +188,7 @@ export default {
       panel: 0,
       snackbar: false,
       snackbar_text: "snackbar_init",
-      interestlist: [
-        { icon: "mdi-music-box", name: "Music", tags: ["Pure", "Piano"] },
-        { icon: "mdi-chart-box", name: "Machine Learning", tags: [] },
-        { icon: "mdi-gamepad-circle", name: "Gaming", tags: ["WOT", "Steam"] },
-        { icon: "mdi-web-box", name: "Front-End", tags: ["Vue.js", "Nuxt.js"] },
-      ],
-      courselist: {
-        comp: [
-          {
-            icon: "mdi-code-greater-than",
-            name: "Computational Thinking",
-            tags: ["COMP1002"],
-          },
-          {
-            icon: "mdi-account-group",
-            name: "Freshmen Seminar",
-            tags: ["COMP1901"],
-          },
-          {
-            icon: "mdi-currency-sign",
-            name: "Programming Fundamentals",
-            tags: ["COMP1011"],
-          },
-          {
-            icon: "mdi-laptop",
-            name: "Introduction to Computer Systems",
-            tags: ["COMP1411"],
-          },
-          {
-            icon: "mdi-chart-scatter-plot",
-            name: "Introduction to Data Analysis",
-            tags: ["COMP1433"],
-          },
-          {
-            icon: "mdi-iframe-array",
-            name: "Data Structures",
-            tags: ["COMP2011"],
-          },
-          {
-            icon: "mdi-code-braces-box",
-            name: "Object-Oriented Programming",
-            tags: ["COMP2021"],
-          },
-          {
-            icon: "mdi-database",
-            name: "Database Systems",
-            tags: ["COMP2411"],
-          },
-          {
-            icon: "mdi-network",
-            name: "Computer Networking",
-            tags: ["COMP2322"],
-          },
-          {
-            icon: "mdi-cpu-64-bit",
-            name: "Computer Organization",
-            tags: ["COMP2421"],
-          },
-          { icon: "mdi-linux", name: "Operating Systems", tags: ["COMP2432"] },
-          {
-            icon: "mdi-code-not-equal-variant",
-            name: "Web Application",
-            tags: ["COMP3421"],
-          },
-        ],
-        other: [
-          {
-            icon: "mdi-book",
-            name: "Splendours of Imperial China",
-            tags: ["CC1C15P"],
-          },
-          {
-            icon: "mdi-tools",
-            name: "Engineering and Environmental Management",
-            tags: ["ME1D01"],
-          },
-          {
-            icon: "mdi-account-group",
-            name: "Tomorrow's Leaders",
-            tags: ["APSS1L01"],
-          },
-          {
-            icon: "mdi-format-letter-case",
-            name: "English for University Studies",
-            tags: ["ELC1013"],
-          },
-          {
-            icon: "mdi-format-annotation-plus",
-            name: "Advanced English Reading and Writing Skills",
-            tags: ["ELC2011"],
-          },
-          {
-            icon: "mdi-progress-question",
-            name: "Introductory Probability",
-            tags: ["AMA1104"],
-          },
-          {
-            icon: "mdi-chart-bell-curve",
-            name: "Calculus for Engineers",
-            tags: ["AMA1130"],
-          },
-          {
-            icon: "mdi-vector-curve",
-            name: "Mathematics Ⅰ",
-            tags: ["AMA2111"],
-          },
-        ],
-      },
+      interests: [],
       gistlist: [
         "58f69668a4db5aa5da0b74b901230ffc",
         "5848c95b83cb449f79e14b16615039fc",
@@ -269,14 +197,31 @@ export default {
         "aab911df7d12ffabb0ff9e8cb5545597",
       ],
       gists: [],
+      courses: {},
+      contacts: [],
     };
   },
   async fetch() {
+    const gh_api = "https://api.github.com/gists/";
     for (var i = 0; i < this.gistlist.length; i++) {
-      this.gists[i] = await fetch(
-        "https://api.github.com/gists/" + this.gistlist[i]
-      ).then((res) => res.json());
+      this.gists[i] = await fetch(gh_api + this.gistlist[i]).then((res) =>
+        res.json()
+      );
     }
+    const homepage_gist =
+      "https://gist.githubusercontent.com/Moenupa/3c84c5c4d627330cd6a16df84a051877";
+    this.courses = await fetch(
+      homepage_gist +
+        "/raw/b8c51c85f1a80c1b662a687ada9f1c7e9d3013d6/courses.json"
+    ).then((res) => res.json());
+    this.interests = await fetch(
+      homepage_gist +
+        "/raw/ecb6141bb39145ba61d2aea4383ce3073aec0483/interests.json"
+    ).then((res) => res.json());
+    this.contacts = await fetch(
+      homepage_gist +
+        "/raw/95f034378c33395a35bc272002866e4328747a60/contacts.json"
+    ).then((res) => res.json());
   },
   methods: {
     async copy(text) {
