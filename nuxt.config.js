@@ -53,6 +53,7 @@ export default {
     // https://go.nuxtjs.dev/content
     // '@nuxt/content',
     "@nuxtjs/vuetify",
+    ["nuxt-clipboard", { autoSetContainer: true }]
   ],
 
   // Content module configuration: https://go.nuxtjs.dev/config-content
