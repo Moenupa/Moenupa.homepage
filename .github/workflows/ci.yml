@@ -4,9 +4,6 @@ on:
   push:
     branches:
       - app
-  pull_request:
-    branches:
-      - app
 
 jobs:
   ci:
