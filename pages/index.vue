@@ -1,16 +1,19 @@
 <template>
-  <v-container class="main-wrapper">
+  <v-container>
     <v-row justify="space-around">
       <v-col cols="12" id="profile">
         <v-card class="pa-4 mt-4" justify="center" align="center">
-          <v-avatar size="10rem">
-            <v-img id="selfie" src="/static/img/87535316_p0.png" alt="" />
-          </v-avatar>
-          <!-- author link: https://www.pixiv.net/users/23223750 not yet authorized-->
-
-          <div class="text-lg-h2 text-md-h3 text-h4">Moenupa WANG</div>
-          <div class="text-lg-h5 text-md-h6 text-body-1">
-            Current Undergraduate Student at Hong Kong PolyU
+          <div class="my-2">
+            <v-avatar size="160">
+              <img id="selfie" src="/static/img/87535316_p0.png" alt="" />
+            </v-avatar>
+            <!-- author link: https://www.pixiv.net/users/23223750 not yet authorized-->
+          </div>
+          <div class="my-2">
+            <div class="text-lg-h2 text-md-h3 text-h4">Moenupa WANG</div>
+            <div class="text-lg-h5 text-md-h6 text-body-1">
+              Current Undergraduate Student at Hong Kong PolyU
+            </div>
           </div>
 
           <div class="my-1" v-for="clist in contacts" :key="clist.id">
