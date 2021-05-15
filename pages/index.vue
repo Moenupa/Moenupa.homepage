@@ -78,7 +78,7 @@
         </v-expansion-panels>
       </v-col>
       <v-col cols="12" sm="6" md="6" xl="3">
-        <v-card class="pa-4" id="courses" justify="center" align="center">
+        <v-card class="pa-4" justify="center" align="center">
           <h2>Courses</h2>
           <v-simple-table class="m-0">
             <tbody>
@@ -92,7 +92,7 @@
         </v-card>
       </v-col>
       <v-col cols="12" sm="6" md="6" xl="3">
-        <v-card class="pa-4" id="courses" justify="center" align="center">
+        <v-card class="pa-4" justify="center" align="center">
           <h2>Courses</h2>
           <v-simple-table class="m-0">
             <tbody>
