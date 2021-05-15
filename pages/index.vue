@@ -1,14 +1,13 @@
 <template>
   <v-container class="main-wrapper">
-    <v-row>
+    <v-row justify="space-around">
       <v-col cols="12">
         <v-card class="pa-4 mt-4" id="profile" justify="center" align="center">
           <Profile />
         </v-card>
       </v-col>
     </v-row>
-    <v-row>
-      <v-spacer></v-spacer>
+    <v-row justify="space-around">
       <v-col cols="12" sm="10" md="6" xl="5">
         <v-card class="pa-4 mb-4" id="introduction">
           <h2 class="text-center">Introduction</h2>
@@ -38,10 +37,9 @@
           </v-simple-table>
         </v-card>
       </v-col>
-      <v-spacer></v-spacer>
       <v-col cols="12" sm="12" md="6" xl="4">
         <v-expansion-panels v-model="panel">
-          <v-expansion-panel v-for="(gist, index) in gistcontent" :key="index">
+          <v-expansion-panel v-for="(gist, gist_i) in gists" :key="gist_i">
             <v-expansion-panel-header v-if="gist.files">{{
               gist.files[Object.keys(gist.files)[0]].filename
             }}</v-expansion-panel-header>
@@ -49,7 +47,7 @@
               <pre
                 v-html="gist.files[Object.keys(gist.files)[0]].content"
               ></pre>
-              <v-divider class="mt-2"></v-divider>
+              <v-divider class="mt-2 mb-1"></v-divider>
               <v-btn
                 text
                 x-small
@@ -79,7 +77,6 @@
           </v-expansion-panel>
         </v-expansion-panels>
       </v-col>
-      <v-spacer></v-spacer>
       <v-col cols="12" sm="6" md="6" xl="3">
         <v-card class="pa-4" id="courses" justify="center" align="center">
           <h2>Courses</h2>
@@ -94,7 +91,6 @@
           </v-simple-table>
         </v-card>
       </v-col>
-      <v-spacer></v-spacer>
       <v-col cols="12" sm="6" md="6" xl="3">
         <v-card class="pa-4" id="courses" justify="center" align="center">
           <h2>Courses</h2>
@@ -109,7 +105,6 @@
           </v-simple-table>
         </v-card>
       </v-col>
-      <v-spacer></v-spacer>
     </v-row>
     <v-snackbar v-model="snackbar" timeout="2000" :vertical="true">
       Copied to Clipboard:
@@ -155,7 +150,7 @@ export default {
   },
   data() {
     return {
-      panel: [1],
+      panel: 0,
       snackbar: false,
       snackbar_text: "snackbar_init",
       interestlist: [
@@ -273,12 +268,12 @@ export default {
         "dd5e2c295036bcfa7251a8dfe5facabc",
         "aab911df7d12ffabb0ff9e8cb5545597",
       ],
-      gistcontent: [],
+      gists: [],
     };
   },
   async fetch() {
     for (var i = 0; i < this.gistlist.length; i++) {
-      this.gistcontent[i] = await fetch(
+      this.gists[i] = await fetch(
         "https://api.github.com/gists/" + this.gistlist[i]
       ).then((res) => res.json());
     }
