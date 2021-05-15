@@ -1,21 +1,11 @@
 <template>
   <v-container>
-    <v-row>
-      <v-spacer></v-spacer>
-      <v-col
-        cols="6"
-        sm="4"
-        lg="3"
-        v-for="(item, index) in links"
-        :key="index"
-      >
-        <v-card
-          max-width="374"
-          min-width="240"
-        >
+    <v-row justify="space-around">
+      <v-col cols="6" sm="4" lg="3" v-for="(item, index) in links" :key="index">
+        <v-card max-width="374" min-width="240">
           <v-img
             height="250"
-            :src="item.img ? item.img: (source+'?'+item.name)"
+            :src="item.img ? item.img : source + '?' + item.name"
           ></v-img>
 
           <v-card-title class="text-capitalize">{{ item.name }}</v-card-title>
@@ -28,13 +18,26 @@
 
           <v-card-actions>
             <NuxtLink :to="item.link" class="text-decoration-none">
-              <v-btn text :color="`purple ${$vuetify.theme.dark ? 'lighten-2': 'darken-2'}`">visit</v-btn>
+              <v-btn
+                text
+                :color="`purple ${
+                  $vuetify.theme.dark ? 'lighten-2' : 'darken-2'
+                }`"
+                >visit</v-btn
+              >
             </NuxtLink>
-            <v-btn text :color="`blue ${$vuetify.theme.dark ? 'darken-3': 'lighten-1'}`" v-for="extra in item.extras" :key="extra.id" :href="extra.link"><v-icon left v-if="extra.icon">{{ extra.icon }}</v-icon>{{extra.name}}</v-btn>
+            <v-btn
+              text
+              :color="`blue ${$vuetify.theme.dark ? 'darken-3' : 'lighten-1'}`"
+              v-for="extra in item.extras"
+              :key="extra.id"
+              :href="extra.link"
+              ><v-icon left v-if="extra.icon">{{ extra.icon }}</v-icon
+              >{{ extra.name }}</v-btn
+            >
           </v-card-actions>
         </v-card>
       </v-col>
-      <v-spacer></v-spacer>
     </v-row>
   </v-container>
 </template>
@@ -45,12 +48,16 @@
 <script>
 export default {
   head: {
-    title: 'Navigation Page',
+    title: "Navigation Page",
     meta: [
-      { hid: 'keywords', name: 'keywords', content: 'Moenupa' },
-      { hid: 'keywords', name: 'keywords', content: 'Link Navigation Roadmap' },
-      { hid: 'description', name: 'description', content: 'Roadmap of Moenupa\'s Website' }
-    ]
+      { hid: "keywords", name: "keywords", content: "Moenupa" },
+      { hid: "keywords", name: "keywords", content: "Link Navigation Roadmap" },
+      {
+        hid: "description",
+        name: "description",
+        content: "Roadmap of Moenupa's Website",
+      },
+    ],
   },
   data() {
     return {
@@ -58,15 +65,16 @@ export default {
       links: [
         {
           name: "homepage",
-          description: "My personal homepage. Contains nearly everything you'll need to know about me.",
+          description:
+            "My personal homepage. Contains nearly everything you'll need to know about me.",
           link: "/",
           extras: [
             {
               icon: "mdi-github",
               name: "github",
-              link: "https://github.com/Moenupa/Moenupa.homepage/blob/app/"
-            }
-          ]
+              link: "https://github.com/Moenupa/Moenupa.homepage/tree/app/",
+            },
+          ],
         },
         {
           name: "about",
@@ -76,9 +84,10 @@ export default {
             {
               icon: "mdi-github",
               name: "github",
-              link: "https://github.com/Moenupa/Moenupa.homepage/blob/app/pages/about.vue"
-            }
-          ]
+              link:
+                "https://github.com/Moenupa/Moenupa.homepage/blob/app/pages/about.vue",
+            },
+          ],
         },
         {
           name: "blog",
@@ -89,13 +98,13 @@ export default {
             {
               icon: "mdi-github",
               name: "github",
-              link: "https://github.com/Moenupa/Moenupa.blog/"
-            }
-          ]
+              link: "https://github.com/Moenupa/Moenupa.blog/",
+            },
+          ],
         },
-      ]
-    }
+      ],
+    };
   },
-  layout: 'simple'
-}
+  layout: "simple",
+};
 </script>
