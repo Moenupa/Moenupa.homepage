@@ -6,23 +6,22 @@
           <div class="my-2">
             <v-avatar size="160">
               <img id="selfie" src="/static/img/87535316_p0.png" alt="" />
+              <!-- author link: https://www.pixiv.net/users/23223750 -->
             </v-avatar>
-            <!-- author link: https://www.pixiv.net/users/23223750 not yet authorized-->
           </div>
-          <div class="my-2">
+          <div class="my-4">
             <div class="text-lg-h2 text-md-h3 text-h4">Moenupa WANG</div>
             <div class="text-lg-h5 text-md-h6 text-body-1">
               Current Undergraduate Student at Hong Kong PolyU
             </div>
           </div>
-
-          <div class="my-1" v-for="clist in contacts" :key="clist.id">
+          <div v-for="clist in contacts" :key="clist.id">
             <v-tooltip bottom v-for="contact in clist" :key="contact.id">
               <template v-slot:activator="{ on, attrs }">
                 <v-btn
-                  text
                   small
                   plain
+                  fab
                   :href="contact.link ? contact.link : undefined"
                   v-bind="attrs"
                   v-on="on"
@@ -32,7 +31,9 @@
                       : contact.accent
                   "
                 >
-                  <v-icon>{{ contact.icon }}</v-icon>
+                  <v-icon>{{
+                    contact.icon ? contact.icon : "mdi-account"
+                  }}</v-icon>
                 </v-btn>
               </template>
               <span>{{ contact.name }}</span>
@@ -84,7 +85,7 @@
       <v-col cols="12" sm="12" md="6" xl="4">
         <v-expansion-panels v-model="panel">
           <v-expansion-panel v-for="(gist, gist_i) in gists" :key="gist_i">
-            <v-expansion-panel-header v-if="gist.files">{{
+            <v-expansion-panel-header v-if="gist.files && false">{{
               gist.files[Object.keys(gist.files)[0]].filename
             }}</v-expansion-panel-header>
             <v-expansion-panel-content v-if="gist.files">
@@ -212,19 +213,16 @@ export default {
       );
     }
     const homepage_gist =
-      "https://gist.githubusercontent.com/Moenupa/3c84c5c4d627330cd6a16df84a051877";
-    this.courses = await fetch(
-      homepage_gist +
-        "/raw/b8c51c85f1a80c1b662a687ada9f1c7e9d3013d6/courses.json"
-    ).then((res) => res.json());
+      "https://gist.githubusercontent.com/Moenupa/3c84c5c4d627330cd6a16df84a051877/raw";
+    this.courses = await fetch(homepage_gist + "/courses.json").then((res) =>
+      res.json()
+    );
     this.interests = await fetch(
-      homepage_gist +
-        "/raw/ecb6141bb39145ba61d2aea4383ce3073aec0483/interests.json"
+      homepage_gist + "/interests.json"
     ).then((res) => res.json());
-    this.contacts = await fetch(
-      homepage_gist +
-        "/raw/95f034378c33395a35bc272002866e4328747a60/contacts.json"
-    ).then((res) => res.json());
+    this.contacts = await fetch(homepage_gist + "/contacts.json").then((res) =>
+      res.json()
+    );
   },
   methods: {
     async copy(text) {

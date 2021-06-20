@@ -17,7 +17,11 @@
           <v-divider class="mx-4"></v-divider>
 
           <v-card-actions>
-            <NuxtLink :to="item.link" class="text-decoration-none">
+            <NuxtLink
+              v-if="item.link.charAt(0) == '/'"
+              :to="item.link"
+              class="text-decoration-none"
+            >
               <v-btn
                 text
                 :color="`purple ${
@@ -27,8 +31,17 @@
               >
             </NuxtLink>
             <v-btn
+              v-else
               text
-              :color="`blue ${$vuetify.theme.dark ? 'darken-3' : 'lighten-1'}`"
+              :href="item.link"
+              :color="`purple ${
+                $vuetify.theme.dark ? 'lighten-2' : 'darken-2'
+              }`"
+              >visit
+            </v-btn>
+            <v-btn
+              text
+              :color="`blue ${$vuetify.theme.dark ? 'darken-3' : 'lighten-2'}`"
               v-for="extra in item.extras"
               :key="extra.id"
               :href="extra.link"
@@ -62,48 +75,15 @@ export default {
   data() {
     return {
       source: "https://source.unsplash.com/random/",
-      links: [
-        {
-          name: "homepage",
-          description:
-            "My personal homepage. Contains nearly everything you'll need to know about me.",
-          link: "/",
-          extras: [
-            {
-              icon: "mdi-github",
-              name: "github",
-              link: "https://github.com/Moenupa/Moenupa.homepage/tree/app/",
-            },
-          ],
-        },
-        {
-          name: "about",
-          description: "The page for information and acknowledgement.",
-          link: "/about",
-          extras: [
-            {
-              icon: "mdi-github",
-              name: "github",
-              link:
-                "https://github.com/Moenupa/Moenupa.homepage/blob/app/pages/about.vue",
-            },
-          ],
-        },
-        {
-          name: "blog",
-          disabled: true,
-          description: "A blog of my own study record.",
-          link: "https://Moenupa.github.io/Moenupa.blog/",
-          extras: [
-            {
-              icon: "mdi-github",
-              name: "github",
-              link: "https://github.com/Moenupa/Moenupa.blog/",
-            },
-          ],
-        },
-      ],
+      links: [],
     };
+  },
+  async fetch() {
+    const homepage_gist =
+      "https://gist.githubusercontent.com/Moenupa/3c84c5c4d627330cd6a16df84a051877/raw";
+    this.links = await fetch(homepage_gist + "/links.json").then((res) =>
+      res.json()
+    );
   },
   layout: "simple",
 };
